@@ -100,7 +100,7 @@ export function BeforeAfter() {
 
       <div className="mt-16 grid gap-12 lg:grid-cols-2">
         {transformations.map((t, i) => (
-          <Reveal key={t.title} delay={i * 80} className={i === 0 ? "lg:col-span-2" : undefined}>
+          <Reveal key={t.title} delay={i * 80} className={i === 0 ? "lg:col-span-2" : ""}>
             <Slider {...t} />
           </Reveal>
         ))}
