@@ -15,12 +15,12 @@ const spans = [
 ];
 
 const heights = [
-  "h-[64vh] lg:h-[86vh]",
-  "h-[42vh] lg:h-[41vh]",
-  "h-[42vh] lg:h-[41vh]",
-  "h-[64vh] lg:h-[86vh]",
-  "h-[46vh] lg:h-[41vh]",
-  "h-[46vh] lg:h-[41vh]",
+  "aspect-[4/5] lg:aspect-[7/9]",
+  "aspect-[16/10] lg:aspect-[16/10]",
+  "aspect-[16/10] lg:aspect-[16/10]",
+  "aspect-[4/5] lg:aspect-[5/7]",
+  "aspect-[16/9] lg:aspect-[21/9]",
+  "aspect-[16/9] lg:aspect-[21/9]",
 ];
 
 export function FeaturedProjects() {

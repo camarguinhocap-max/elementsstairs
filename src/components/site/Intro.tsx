@@ -33,7 +33,7 @@ export function Intro() {
               width={1024}
               height={1440}
               loading="lazy"
-              className="h-[70vh] min-h-[420px] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.03]"
+              className="aspect-[3/4] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.03]"
             />
           </div>
         </Reveal>

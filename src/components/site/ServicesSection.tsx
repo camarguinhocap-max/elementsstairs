@@ -18,7 +18,7 @@ export function ServicesSection() {
                   src={s.image}
                   alt={s.title}
                   loading="lazy"
-                  className="h-[46vh] min-h-[300px] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.06]"
+                  className="aspect-[4/5] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.06]"
                 />
               </div>
               <h3 className="mt-7 font-serif text-2xl">{s.title}</h3>

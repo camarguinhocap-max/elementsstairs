@@ -20,7 +20,7 @@ export function MaterialDetails() {
                 src={m.image}
                 alt={`${m.label} detail`}
                 loading="lazy"
-                className="h-[34vh] min-h-[220px] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.07] lg:h-[52vh]"
+                className="aspect-[3/4] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.07]"
               />
             </div>
             <p className="mt-4 text-[11px] tracking-[0.28em] uppercase">{m.label}</p>
