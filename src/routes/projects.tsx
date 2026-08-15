@@ -2,25 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { MobileContactBar } from "@/components/site/MobileContactBar";
-import { Hero } from "@/components/site/Hero";
-import { Intro } from "@/components/site/Intro";
+import { PageHero } from "@/components/site/PageHero";
 import { FeaturedProjects } from "@/components/site/FeaturedProjects";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
-import { ServicesSection } from "@/components/site/ServicesSection";
-import { MaterialDetails } from "@/components/site/MaterialDetails";
-import { ProcessSection } from "@/components/site/ProcessSection";
-import { TrustSection } from "@/components/site/TrustSection";
-import { Testimonials } from "@/components/site/Testimonials";
 import { GallerySection } from "@/components/site/GallerySection";
 import { InstagramSection } from "@/components/site/InstagramSection";
 import { FinalCta } from "@/components/site/FinalCta";
-import { ContactSection } from "@/components/site/ContactSection";
+import { projects } from "@/lib/site-data";
 
-const title = "Custom Stairs & Railings in South Florida | Element Stairs & Railings";
+const title = "Luxury Staircase Projects & Portfolio | Element Stairs & Railings";
 const description =
-  "Element Stairs & Railings designs and builds custom staircases, stair remodeling, wood stairs, glass and metal railings for homes in Fort Lauderdale and South Florida.";
+  "Selected staircase and railing projects: floating stairs, wood stairs, glass railings, metal railings and complete staircase renovations in South Florida.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
       { title },
@@ -31,27 +25,25 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: ProjectsPage,
 });
 
-function Index() {
+function ProjectsPage() {
   return (
     <>
-      <SiteHeader overlay />
+      <SiteHeader />
       <main>
-        <Hero />
-        <Intro />
+        <PageHero
+          eyebrow="Projects"
+          title="Selected Projects"
+          intro="Craftsmanship designed around architecture. Explore recent staircases, railings and transformations."
+          image={projects[5]!.image}
+        />
         <FeaturedProjects />
         <BeforeAfter />
-        <ServicesSection />
-        <MaterialDetails />
-        <ProcessSection />
-        <TrustSection />
-        <Testimonials />
         <GallerySection />
         <InstagramSection />
         <FinalCta />
-        <ContactSection />
       </main>
       <SiteFooter />
       <MobileContactBar />
