@@ -1,24 +1,60 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { MobileContactBar } from "@/components/site/MobileContactBar";
+import { Hero } from "@/components/site/Hero";
+import { Intro } from "@/components/site/Intro";
+import { FeaturedProjects } from "@/components/site/FeaturedProjects";
+import { BeforeAfter } from "@/components/site/BeforeAfter";
+import { ServicesSection } from "@/components/site/ServicesSection";
+import { MaterialDetails } from "@/components/site/MaterialDetails";
+import { ProcessSection } from "@/components/site/ProcessSection";
+import { TrustSection } from "@/components/site/TrustSection";
+import { Testimonials } from "@/components/site/Testimonials";
+import { GallerySection } from "@/components/site/GallerySection";
+import { InstagramSection } from "@/components/site/InstagramSection";
+import { FinalCta } from "@/components/site/FinalCta";
+import { ContactSection } from "@/components/site/ContactSection";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Custom Stairs & Railings in South Florida | Element Stairs & Railings";
+const description =
+  "Element Stairs & Railings designs and builds custom staircases, stair remodeling, wood stairs, glass and metal railings for homes in Fort Lauderdale and South Florida.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SiteHeader overlay />
+      <main>
+        <Hero />
+        <Intro />
+        <FeaturedProjects />
+        <BeforeAfter />
+        <ServicesSection />
+        <MaterialDetails />
+        <ProcessSection />
+        <TrustSection />
+        <Testimonials />
+        <GallerySection />
+        <InstagramSection />
+        <FinalCta />
+        <ContactSection />
+      </main>
+      <SiteFooter />
+      <MobileContactBar />
+    </>
   );
 }
