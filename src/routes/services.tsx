@@ -7,7 +7,7 @@ import { ServicesSection } from "@/components/site/ServicesSection";
 import { MaterialDetails } from "@/components/site/MaterialDetails";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { FinalCta } from "@/components/site/FinalCta";
-import { projects } from "@/lib/site-data";
+import { projects, services } from "@/lib/site-data";
 
 const title = "Custom Stairs, Railings & Stair Remodeling Services | Element";
 const description =
