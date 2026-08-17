@@ -25,6 +25,49 @@ export const Route = createFileRoute("/services")({
       { property: "og:url", content: "https://elementsstairs.lovable.app/services" },
     ],
     links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://elementsstairs.lovable.app/services#page",
+            url: "https://elementsstairs.lovable.app/services",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://elementsstairs.lovable.app/services" },
+            ],
+          },
+          {
+            "@type": "ItemList",
+            name: "Staircase and railing services",
+            itemListElement: services.map((s, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Service",
+                name: s.title,
+                description: s.copy,
+                serviceType: s.title,
+                provider: { "@id": "https://elementsstairs.lovable.app/#business" },
+                areaServed: "South Florida",
+              },
+            })),
+          },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });

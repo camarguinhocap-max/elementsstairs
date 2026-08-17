@@ -25,6 +25,33 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: "https://elementsstairs.lovable.app/about" },
     ],
     links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "AboutPage",
+            "@id": "https://elementsstairs.lovable.app/about#page",
+            url: "https://elementsstairs.lovable.app/about",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://elementsstairs.lovable.app/about" },
+            ],
+          },
+          ],
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });

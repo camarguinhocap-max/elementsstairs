@@ -22,6 +22,33 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: "https://elementsstairs.lovable.app/contact" },
     ],
     links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://elementsstairs.lovable.app/contact#page",
+            url: "https://elementsstairs.lovable.app/contact",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Contact", item: "https://elementsstairs.lovable.app/contact" },
+            ],
+          },
+          ],
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });

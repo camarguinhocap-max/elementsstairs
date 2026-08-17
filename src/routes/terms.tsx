@@ -18,6 +18,33 @@ export const Route = createFileRoute("/terms")({
       { property: "og:url", content: "https://elementsstairs.lovable.app/terms" },
     ],
     links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/terms" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://elementsstairs.lovable.app/terms#page",
+            url: "https://elementsstairs.lovable.app/terms",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Terms", item: "https://elementsstairs.lovable.app/terms" },
+            ],
+          },
+          ],
+        }),
+      },
+    ],
   }),
   component: TermsPage,
 });
