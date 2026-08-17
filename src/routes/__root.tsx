@@ -99,6 +99,78 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+              "@id": "https://elementsstairs.lovable.app/#business",
+              name: "Element Stairs & Railings",
+              description:
+                "Custom stairs, railings and staircase remodeling for luxury homes in South Florida.",
+              url: "https://elementsstairs.lovable.app",
+              telephone: "+1-954-826-5786",
+              priceRange: "$$$",
+              image: "https://elementsstairs.lovable.app/favicon.ico",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Fort Lauderdale",
+                addressRegion: "FL",
+                addressCountry: "US",
+              },
+              areaServed: [
+                { "@type": "AdministrativeArea", name: "Broward County, Florida" },
+                { "@type": "AdministrativeArea", name: "Miami-Dade County, Florida" },
+                { "@type": "AdministrativeArea", name: "Palm Beach County, Florida" },
+              ],
+              sameAs: ["https://instagram.com/element.stairs"],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  name: "Leonardo Haluche",
+                  telephone: "+1-954-826-5786",
+                },
+                {
+                  "@type": "ContactPoint",
+                  contactType: "sales",
+                  name: "Jader Alencar",
+                  telephone: "+1-954-588-4403",
+                },
+                {
+                  "@type": "ContactPoint",
+                  contactType: "customer service",
+                  name: "Element Office",
+                  telephone: "+1-754-326-3344",
+                },
+              ],
+              makesOffer: [
+                "Custom Stairs",
+                "Stair Remodeling",
+                "Wood Stairs",
+                "Metal Railings",
+                "Glass Railings",
+                "Custom Handrails",
+              ].map((name) => ({
+                "@type": "Offer",
+                itemOffered: { "@type": "Service", name, serviceType: name },
+              })),
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://elementsstairs.lovable.app/#website",
+              url: "https://elementsstairs.lovable.app",
+              name: "Element Stairs & Railings",
+              publisher: { "@id": "https://elementsstairs.lovable.app/#business" },
+              inLanguage: "en-US",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

@@ -23,6 +23,49 @@ export const Route = createFileRoute("/projects")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://elementsstairs.lovable.app/projects" },
+    ],
+    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/projects" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://elementsstairs.lovable.app/projects#page",
+            url: "https://elementsstairs.lovable.app/projects",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Projects", item: "https://elementsstairs.lovable.app/projects" },
+            ],
+          },
+          {
+            "@type": "ItemList",
+            name: "Selected staircase and railing projects",
+            itemListElement: projects.map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "CreativeWork",
+                name: p.title,
+                description: p.description,
+                genre: p.category,
+              },
+            })),
+          },
+          ],
+        }),
+      },
     ],
   }),
   component: ProjectsPage,

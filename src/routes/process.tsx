@@ -22,6 +22,35 @@ export const Route = createFileRoute("/process")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://elementsstairs.lovable.app/process" },
+    ],
+    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/process" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://elementsstairs.lovable.app/process#page",
+            url: "https://elementsstairs.lovable.app/process",
+            name: title,
+            description,
+            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
+            about: { "@id": "https://elementsstairs.lovable.app/#business" },
+            inLanguage: "en-US",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
+              { "@type": "ListItem", position: 2, name: "Process", item: "https://elementsstairs.lovable.app/process" },
+            ],
+          },
+          ],
+        }),
+      },
     ],
   }),
   component: ProcessPage,
