@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { business, contacts, instagramHandle, instagramUrl, logo, services } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 
 export function SiteFooter() {
   return (
@@ -72,7 +73,11 @@ export function SiteFooter() {
                   <span className="block text-ink-foreground">
                     {c.name} — {c.role}
                   </span>
-                  <a href={`tel:${c.tel}`} className="transition-colors hover:text-bronze">
+                  <a
+                    href={`tel:${c.tel}`}
+                    onClick={() => trackEvent("phone_click")}
+                    className="transition-colors hover:text-bronze"
+                  >
                     {c.phone}
                   </a>
                 </li>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { business, contacts, images } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 import heroVideo from "@/assets/hero-staircase.mp4.asset.json";
 
 export function Hero() {
@@ -55,10 +56,18 @@ export function Hero() {
           <Link to="/stairs" className="btn-base btn-outline-light">
             See Our Stair Work
           </Link>
-          <Link to="/contact" className="btn-base btn-solid">
+          <Link
+            to="/contact"
+            onClick={() => trackEvent("estimate_click")}
+            className="btn-base btn-solid"
+          >
             Get a Free Estimate
           </Link>
-          <a href={`tel:${contacts[0]!.tel}`} className="btn-base btn-outline-light">
+          <a
+            href={`tel:${contacts[0]!.tel}`}
+            onClick={() => trackEvent("phone_click")}
+            className="btn-base btn-outline-light"
+          >
             Call {contacts[0]!.phone}
           </a>
         </div>

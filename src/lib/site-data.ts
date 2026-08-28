@@ -66,6 +66,11 @@ export const business = {
   email: "contact@ehrremodeling.com",
 };
 
+// Google Analytics 4 — property "Element Home Remodeling" (separate GA4 account,
+// same access model as Search Console: Camarguinho manages day-to-day, Léo has
+// Administrator access too).
+export const ga4MeasurementId = "G-8JZN7FTGMS";
+
 // WhatsApp isn't heavily used by US customers, but the client wants a small
 // floating button available anyway. Pre-fills the chat with an English
 // message when clicked. Uses Léo's number for now (owner) — can switch to

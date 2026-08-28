@@ -3,6 +3,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { Upload, X } from "lucide-react";
 import { toast } from "sonner";
 import { business, contacts, instagramHandle, instagramUrl } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "./Reveal";
 
 const projectTypes = [
@@ -41,6 +42,7 @@ export function ContactSection({
     });
     form.reset();
     setFiles([]);
+    trackEvent("form_submit");
     navigate({ to: "/thank-you" });
   }
 
@@ -187,6 +189,7 @@ export function ContactSection({
                 </p>
                 <a
                   href={`tel:${c.tel}`}
+                  onClick={() => trackEvent("phone_click")}
                   className="mt-2 block font-serif text-2xl transition-colors hover:text-bronze"
                 >
                   {c.phone}

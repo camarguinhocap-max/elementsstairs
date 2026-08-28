@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone, MessageSquare, FileText, Plus, X } from "lucide-react";
 import { contacts } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 export function MobileContactBar() {
   const [open, setOpen] = useState(false);
@@ -18,6 +19,7 @@ export function MobileContactBar() {
       >
         <a
           href={`tel:${office.tel}`}
+          onClick={() => trackEvent("phone_click")}
           className="flex items-center gap-3 bg-background px-4 py-3 text-[10px] tracking-[0.2em] uppercase shadow-lg"
         >
           <Phone className="size-4" strokeWidth={1.25} /> Call
@@ -30,7 +32,10 @@ export function MobileContactBar() {
         </a>
         <Link
           to="/contact"
-          onClick={() => setOpen(false)}
+          onClick={() => {
+            setOpen(false);
+            trackEvent("estimate_click");
+          }}
           className="flex items-center gap-3 bg-background px-4 py-3 text-[10px] tracking-[0.2em] uppercase shadow-lg"
         >
           <FileText className="size-4" strokeWidth={1.25} /> Free Estimate

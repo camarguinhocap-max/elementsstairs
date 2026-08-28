@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { business, contacts, instagramUrl } from "@/lib/site-data";
+import { business, contacts, instagramUrl, ga4MeasurementId } from "@/lib/site-data";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 function NotFoundComponent() {
@@ -101,6 +101,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
+      // Google Analytics 4 (gtag.js) — property "Element Home Remodeling".
+      {
+        src: `https://www.googletagmanager.com/gtag/js?id=${ga4MeasurementId}`,
+        async: true,
+      },
+      {
+        children: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${ga4MeasurementId}');`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

@@ -1,4 +1,5 @@
 import { whatsapp } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 
 /** Simple inline WhatsApp glyph — lucide-react has no brand icons. */
 function WhatsAppIcon() {
@@ -16,6 +17,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with us on WhatsApp"
+      onClick={() => trackEvent("whatsapp_click")}
       className="fixed bottom-5 left-5 z-60 flex size-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform duration-300 hover:scale-105"
     >
       <WhatsAppIcon />

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { contacts, images } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "./Reveal";
 
 export function FinalCta() {
@@ -28,10 +29,18 @@ export function FinalCta() {
             Free estimates, honest timelines, and a clean job site from start to finish.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/contact" className="btn-base btn-solid">
+            <Link
+              to="/contact"
+              onClick={() => trackEvent("estimate_click")}
+              className="btn-base btn-solid"
+            >
               Free Estimate
             </Link>
-            <a href={`tel:${office.tel}`} className="btn-base btn-outline-light">
+            <a
+              href={`tel:${office.tel}`}
+              onClick={() => trackEvent("phone_click")}
+              className="btn-base btn-outline-light"
+            >
               Call {office.phone}
             </a>
           </div>
