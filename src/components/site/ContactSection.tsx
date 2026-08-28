@@ -29,6 +29,34 @@ const fieldClass =
 // once Léo verifies leonardohaluche@gmail.com there.
 const WEB3FORMS_ACCESS_KEY = "8397f17d-5bc1-446d-a7ae-f2cbbd382997";
 
+// Cloudinary (cloudinary.com) — free plan, used only to host photos the
+// visitor attaches to the estimate form. Web3Forms' free plan can't forward
+// file attachments (that's a paid feature), so instead we upload each photo
+// straight from the browser to Cloudinary (unsigned upload preset — safe to
+// expose client-side, it can only create new assets in the
+// "estimate-form-photos" folder, not read/delete anything) and send the
+// resulting links as text in the notification email.
+const CLOUDINARY_CLOUD_NAME = "bwxfwi5s";
+const CLOUDINARY_UPLOAD_PRESET = "ehr_estimate_form";
+
+async function uploadPhotosToCloudinary(files: File[]): Promise<string[]> {
+  const uploads = files.map(async (file) => {
+    const body = new FormData();
+    body.append("file", file);
+    body.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+      { method: "POST", body },
+    );
+    const result = await response.json();
+    if (!response.ok) throw new Error(result?.error?.message ?? "Photo upload failed");
+    return result.secure_url as string;
+  });
+
+  return Promise.all(uploads);
+}
+
 export function ContactSection({
   defaultProjectType,
 }: {
@@ -50,6 +78,11 @@ export function ContactSection({
       formData.append("access_key", WEB3FORMS_ACCESS_KEY);
       formData.append("subject", "New Estimate Request — Element Home Remodeling");
       formData.append("from_name", "Element Home Remodeling — Website");
+
+      if (files.length > 0) {
+        const photoUrls = await uploadPhotosToCloudinary(files);
+        formData.append("photos", photoUrls.map((url, i) => `Photo ${i + 1}: ${url}`).join("\n"));
+      }
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
