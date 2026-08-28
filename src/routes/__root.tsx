@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { business, contacts, instagramUrl } from "@/lib/site-data";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 function NotFoundComponent() {
   return (
@@ -113,6 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Oak wood staircases, stair remodeling, and general home remodeling (kitchens, bathrooms, carpentry, painting) for homeowners in Central Florida.",
               url: business.siteUrl,
               telephone: contacts[0]!.tel,
+              email: business.email,
               // priceRange intentionally omitted — this business is positioned as accessible,
               // not premium/luxury; do not add "$$$" back in.
               image: `${business.siteUrl}/favicon.ico`,
@@ -184,6 +186,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <WhatsAppButton />
       <Toaster position="bottom-center" />
     </QueryClientProvider>
   );

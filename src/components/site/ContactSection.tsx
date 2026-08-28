@@ -194,6 +194,15 @@ export function ContactSection({
               </li>
             ))}
             <li>
+              <p className="eyebrow">Email</p>
+              <a
+                href={`mailto:${business.email}`}
+                className="mt-2 block font-serif text-2xl transition-colors hover:text-bronze"
+              >
+                {business.email}
+              </a>
+            </li>
+            <li>
               <p className="eyebrow">Instagram</p>
               <a
                 href={instagramUrl}

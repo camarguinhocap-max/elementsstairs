@@ -79,6 +79,14 @@ export function SiteFooter() {
               ))}
               <li>
                 <a
+                  href={`mailto:${business.email}`}
+                  className="transition-colors hover:text-bronze"
+                >
+                  {business.email}
+                </a>
+              </li>
+              <li>
+                <a
                   href={instagramUrl}
                   target="_blank"
                   rel="noreferrer"

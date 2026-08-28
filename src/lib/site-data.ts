@@ -58,10 +58,23 @@ export const business = {
       copy: "Realistic timelines we commit to, so your home isn't a job site longer than it has to be.",
     },
   ],
-  // TODO: confirm street address — still open on the launch checklist.
+  // TODO: confirm street address — still open on the launch checklist. Follow up
+  // with the client closer to launch, per their explicit request.
   address: null as string | null,
   cities: ["Ocala", "Orlando", "Gainesville", "Tampa"],
   state: "FL",
+  email: "contact@ehrremodeling.com",
+};
+
+// WhatsApp isn't heavily used by US customers, but the client wants a small
+// floating button available anyway. Pre-fills the chat with an English
+// message when clicked. Uses Bia's number (estimates & scheduling).
+export const whatsapp = {
+  tel: "19546964859",
+  message: "Hi! I found you through your website and I'd like to get a free estimate.",
+  get url() {
+    return `https://wa.me/${this.tel}?text=${encodeURIComponent(this.message)}`;
+  },
 };
 
 // TODO: confirm the real Instagram handle before launch — this is a placeholder.
