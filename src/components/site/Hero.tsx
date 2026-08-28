@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { images } from "@/lib/site-data";
+import { business, contacts, images } from "@/lib/site-data";
 import heroVideo from "@/assets/hero-staircase.mp4.asset.json";
 
 export function Hero() {
@@ -41,23 +41,26 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink/85" />
 
       <div className="relative mx-auto flex h-full max-w-[1600px] flex-col justify-end px-6 pb-24 sm:px-10 sm:pb-28">
-        <p className="eyebrow-light">Custom Stairs &amp; Railings</p>
+        <p className="eyebrow-light">Serving {business.cities.join(", ")}, FL</p>
         <h1 className="display mt-6 max-w-4xl text-ink-foreground">
-          Elevating Spaces
+          Oak Wood Staircases
           <br />
-          Through Craftsmanship.
+          &amp; Home Remodeling, Done Right.
         </h1>
         <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-muted">
-          Custom stairs and railings designed to transform your home through exceptional
-          craftsmanship, refined materials and timeless design.
+          From custom oak staircases to kitchens, bathrooms and full home remodeling — organized job
+          sites, quality materials, and {business.insurance}. Free, no-pressure estimates.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link to="/projects" className="btn-base btn-outline-light">
-            Explore Our Projects
+          <Link to="/stairs" className="btn-base btn-outline-light">
+            See Our Stair Work
           </Link>
           <Link to="/contact" className="btn-base btn-solid">
-            Request a Quote
+            Get a Free Estimate
           </Link>
+          <a href={`tel:${contacts[0]!.tel}`} className="btn-base btn-outline-light">
+            Call {contacts[0]!.phone}
+          </a>
         </div>
       </div>
 

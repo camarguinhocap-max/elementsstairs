@@ -9,9 +9,9 @@ import { ProcessSection } from "@/components/site/ProcessSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { projects, services } from "@/lib/site-data";
 
-const title = "Custom Stairs, Railings & Stair Remodeling Services | Element";
+const title = "Stairs, Railings & Home Remodeling Services | Element Home Remodeling";
 const description =
-  "Custom stairs, stair remodeling, wood stairs, metal railings, glass railings and custom handrails, designed and built for South Florida homes.";
+  "Oak wood staircases, stair remodeling, metal and glass railings, plus kitchen, bathroom, carpentry and painting services for Central Florida homes.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -22,48 +22,58 @@ export const Route = createFileRoute("/services")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/services" },
+      { property: "og:url", content: "https://ehrremodeling.com/services" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/services" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/services" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-          {
-            "@type": "CollectionPage",
-            "@id": "https://elementsstairs.lovable.app/services#page",
-            url: "https://elementsstairs.lovable.app/services",
-            name: title,
-            description,
-            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
-            about: { "@id": "https://elementsstairs.lovable.app/#business" },
-            inLanguage: "en-US",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://elementsstairs.lovable.app/services" },
-            ],
-          },
-          {
-            "@type": "ItemList",
-            name: "Staircase and railing services",
-            itemListElement: services.map((s, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              item: {
-                "@type": "Service",
-                name: s.title,
-                description: s.copy,
-                serviceType: s.title,
-                provider: { "@id": "https://elementsstairs.lovable.app/#business" },
-                areaServed: "South Florida",
-              },
-            })),
-          },
+            {
+              "@type": "CollectionPage",
+              "@id": "https://ehrremodeling.com/services#page",
+              url: "https://ehrremodeling.com/services",
+              name: title,
+              description,
+              isPartOf: { "@id": "https://ehrremodeling.com/#website" },
+              about: { "@id": "https://ehrremodeling.com/#business" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://ehrremodeling.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Services",
+                  item: "https://ehrremodeling.com/services",
+                },
+              ],
+            },
+            {
+              "@type": "ItemList",
+              name: "Stairs, railings and home remodeling services",
+              itemListElement: services.map((s, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                item: {
+                  "@type": "Service",
+                  name: s.title,
+                  description: s.copy,
+                  serviceType: s.title,
+                  provider: { "@id": "https://ehrremodeling.com/#business" },
+                  areaServed: "Central Florida",
+                },
+              })),
+            },
           ],
         }),
       },
@@ -79,8 +89,8 @@ function ServicesPage() {
       <main>
         <PageHero
           eyebrow="Services"
-          title="Crafted Around Your Space."
-          intro="From full custom staircases to railing replacements, each project is designed around the architecture of the home."
+          title="Stairs First. Then Everything Else."
+          intro="Oak wood staircases and stair remodeling are our priority — plus kitchen, bathroom, carpentry and painting for the rest of the home."
           image={projects[0]!.image}
         />
         <ServicesSection />

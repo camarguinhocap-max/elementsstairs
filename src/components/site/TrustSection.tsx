@@ -1,16 +1,5 @@
+import { business } from "@/lib/site-data";
 import { Reveal } from "./Reveal";
-
-const pillars = [
-  { title: "Custom Design", copy: "Built around your space." },
-  {
-    title: "Quality Materials",
-    copy: "Wood, metal and glass selected for durability and beauty.",
-  },
-  {
-    title: "Expert Craftsmanship",
-    copy: "Precision from fabrication through final installation.",
-  },
-];
 
 export function TrustSection() {
   return (
@@ -18,18 +7,18 @@ export function TrustSection() {
       <div className="mx-auto max-w-[1600px] px-6 sm:px-10">
         <Reveal className="max-w-4xl">
           <h2 className="display-sm">
-            Built With Precision.
+            Why Homeowners
             <br />
-            Designed to Last.
+            Choose {business.shortName}.
           </h2>
           <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-ink-muted">
-            Every project reflects our commitment to craftsmanship, quality materials and attention
-            to detail.
+            {business.insurance}. Free estimates, no pressure, and a straight answer about timeline
+            and scope before we start.
           </p>
         </Reveal>
 
         <div className="mt-20 grid gap-12 border-t border-ink-muted/15 pt-14 md:grid-cols-3 md:gap-8">
-          {pillars.map((p, i) => (
+          {business.differentiators.map((p, i) => (
             <Reveal key={p.title} delay={i * 110}>
               <p className="eyebrow-light">{p.title}</p>
               <p className="mt-5 max-w-xs font-serif text-2xl leading-snug">{p.copy}</p>

@@ -56,4 +56,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://elementsstairs.lovable.app/sitemap.xml
+Sitemap: https://ehrremodeling.com/sitemap.xml

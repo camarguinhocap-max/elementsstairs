@@ -80,7 +80,12 @@ export function FeaturedProjects() {
         </div>
       </div>
 
-      <Lightbox items={projects} index={index} onClose={() => setIndex(null)} onIndexChange={setIndex} />
+      <Lightbox
+        items={projects}
+        index={index}
+        onClose={() => setIndex(null)}
+        onIndexChange={setIndex}
+      />
     </section>
   );
 }

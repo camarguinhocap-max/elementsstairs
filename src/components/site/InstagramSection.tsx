@@ -11,7 +11,12 @@ export function InstagramSection() {
           <p className="eyebrow">Follow Our Work</p>
           <h2 className="display-sm mt-6">See What We&rsquo;re Building.</h2>
         </div>
-        <a href={instagramUrl} target="_blank" rel="noreferrer" className="btn-base btn-outline-dark">
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-base btn-outline-dark"
+        >
           Follow on Instagram
         </a>
       </Reveal>
@@ -19,7 +24,12 @@ export function InstagramSection() {
       <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
         {feed.map((item, i) => (
           <Reveal key={item.id} delay={i * 60} className="group">
-            <a href={instagramUrl} target="_blank" rel="noreferrer" className="block overflow-hidden">
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="block overflow-hidden"
+            >
               <img
                 src={item.image}
                 alt={`${item.title} on Instagram ${instagramHandle}`}

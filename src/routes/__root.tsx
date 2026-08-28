@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { business, contacts, instagramUrl } from "@/lib/site-data";
 
 function NotFoundComponent() {
   return (
@@ -78,14 +79,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Element Stairs & Railings — Custom Stairs. Refined Spaces." },
+      { title: `${business.name} — Stairs & Home Remodeling in Central Florida` },
       {
         name: "description",
-        content:
-          "Custom stairs, railings and staircase remodeling for luxury homes in South Florida.",
+        content: `Oak wood staircases, stair remodeling, kitchen, bathroom and home remodeling for Ocala, Orlando, Gainesville and Tampa, FL. Free estimates, ${business.insurance}.`,
       },
-      { name: "author", content: "Element Stairs & Railings" },
-      { property: "og:site_name", content: "Element Stairs & Railings" },
+      { name: "author", content: business.name },
+      { property: "og:site_name", content: business.name },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -95,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@200;300;400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -107,53 +107,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-              "@id": "https://elementsstairs.lovable.app/#business",
-              name: "Element Stairs & Railings",
+              "@id": `${business.siteUrl}/#business`,
+              name: business.name,
               description:
-                "Custom stairs, railings and staircase remodeling for luxury homes in South Florida.",
-              url: "https://elementsstairs.lovable.app",
-              telephone: "+1-954-826-5786",
-              priceRange: "$$$",
-              image: "https://elementsstairs.lovable.app/favicon.ico",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Fort Lauderdale",
-                addressRegion: "FL",
-                addressCountry: "US",
-              },
-              areaServed: [
-                { "@type": "AdministrativeArea", name: "Broward County, Florida" },
-                { "@type": "AdministrativeArea", name: "Miami-Dade County, Florida" },
-                { "@type": "AdministrativeArea", name: "Palm Beach County, Florida" },
-              ],
-              sameAs: ["https://instagram.com/element.stairs"],
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  contactType: "sales",
-                  name: "Leonardo Haluche",
-                  telephone: "+1-954-826-5786",
-                },
-                {
-                  "@type": "ContactPoint",
-                  contactType: "sales",
-                  name: "Jader Alencar",
-                  telephone: "+1-954-588-4403",
-                },
-                {
-                  "@type": "ContactPoint",
-                  contactType: "customer service",
-                  name: "Element Office",
-                  telephone: "+1-754-326-3344",
-                },
-              ],
+                "Oak wood staircases, stair remodeling, and general home remodeling (kitchens, bathrooms, carpentry, painting) for homeowners in Central Florida.",
+              url: business.siteUrl,
+              telephone: contacts[0]!.tel,
+              // priceRange intentionally omitted — this business is positioned as accessible,
+              // not premium/luxury; do not add "$$$" back in.
+              image: `${business.siteUrl}/favicon.ico`,
+              areaServed: business.cities.map((city) => ({
+                "@type": "City",
+                name: `${city}, Florida`,
+              })),
+              sameAs: [instagramUrl],
+              openingHours: "Mo-Sa 08:00-17:00",
+              contactPoint: contacts.map((c) => ({
+                "@type": "ContactPoint",
+                contactType: "sales",
+                name: c.name,
+                telephone: c.tel,
+              })),
               makesOffer: [
-                "Custom Stairs",
+                "Oak Wood Staircase",
                 "Stair Remodeling",
-                "Wood Stairs",
+                "Custom Stairs",
                 "Metal Railings",
                 "Glass Railings",
                 "Custom Handrails",
+                "Kitchen Remodeling",
+                "Bathroom Remodeling",
+                "Carpentry",
+                "Interior Painting",
               ].map((name) => ({
                 "@type": "Offer",
                 itemOffered: { "@type": "Service", name, serviceType: name },
@@ -161,10 +146,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "WebSite",
-              "@id": "https://elementsstairs.lovable.app/#website",
-              url: "https://elementsstairs.lovable.app",
-              name: "Element Stairs & Railings",
-              publisher: { "@id": "https://elementsstairs.lovable.app/#business" },
+              "@id": `${business.siteUrl}/#website`,
+              url: business.siteUrl,
+              name: business.name,
+              publisher: { "@id": `${business.siteUrl}/#business` },
               inLanguage: "en-US",
             },
           ],

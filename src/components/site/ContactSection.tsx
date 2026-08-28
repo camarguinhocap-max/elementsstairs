@@ -1,34 +1,47 @@
 import { useRef, useState, type FormEvent } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { Upload, X } from "lucide-react";
 import { toast } from "sonner";
-import { contacts, instagramHandle, instagramUrl } from "@/lib/site-data";
+import { business, contacts, instagramHandle, instagramUrl } from "@/lib/site-data";
 import { Reveal } from "./Reveal";
 
 const projectTypes = [
-  "Custom Stairs",
+  "Oak Wood Staircase",
   "Stair Remodeling",
-  "Wood Stairs",
-  "Metal Railings",
-  "Glass Railings",
-  "Handrails",
+  "Custom Stairs (wood/glass/metal/cable)",
+  "Metal or Glass Railings",
+  "Kitchen Remodeling",
+  "Bathroom Remodeling",
+  "Carpentry",
+  "Interior Painting",
   "Other",
 ];
 
 const fieldClass =
   "w-full border-0 border-b border-border bg-transparent py-3 text-sm text-foreground transition-colors outline-none placeholder:text-muted-foreground/70 focus:border-bronze";
 
-export function ContactSection() {
+export function ContactSection({
+  defaultProjectType,
+}: {
+  /** Preselect a project type — used on the /stairs landing page. */
+  defaultProjectType?: string;
+}) {
   const [files, setFiles] = useState<File[]>([]);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const navigate = useNavigate();
 
+  // NOTE: this form does not send email yet — no backend/form service is wired
+  // up (Fase 4 of the launch checklist). Hook this up to a real endpoint
+  // (e.g. a Cloudflare Pages Function, Formspree, or similar) before launch.
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     toast.success("Thank you — your request has been prepared.", {
-      description: "Our team will follow up shortly. For an immediate response, call (754) 326-3344.",
+      description: `Our team will follow up shortly. For an immediate response, call ${contacts[0]!.phone}.`,
     });
     form.reset();
     setFiles([]);
+    navigate({ to: "/thank-you" });
   }
 
   return (
@@ -43,7 +56,13 @@ export function ContactSection() {
           <form onSubmit={onSubmit} className="grid gap-10 sm:grid-cols-2">
             <label className="block">
               <span className="eyebrow">Name</span>
-              <input required name="name" autoComplete="name" className={fieldClass} placeholder="Full name" />
+              <input
+                required
+                name="name"
+                autoComplete="name"
+                className={fieldClass}
+                placeholder="Full name"
+              />
             </label>
             <label className="block">
               <span className="eyebrow">Phone</span>
@@ -68,12 +87,24 @@ export function ContactSection() {
               />
             </label>
             <label className="block">
-              <span className="eyebrow">City</span>
-              <input required name="city" className={fieldClass} placeholder="Fort Lauderdale" />
+              <span className="eyebrow">ZIP Code</span>
+              <input
+                required
+                name="zip"
+                inputMode="numeric"
+                pattern="[0-9]{5}"
+                className={fieldClass}
+                placeholder="34471"
+              />
             </label>
             <label className="block sm:col-span-2">
               <span className="eyebrow">Project Type</span>
-              <select required name="projectType" defaultValue="" className={fieldClass}>
+              <select
+                required
+                name="projectType"
+                defaultValue={defaultProjectType ?? ""}
+                className={fieldClass}
+              >
                 <option value="" disabled>
                   Select a project type
                 </option>
@@ -110,7 +141,7 @@ export function ContactSection() {
                 className="mt-4 flex w-full items-center justify-center gap-3 border border-dashed border-border py-8 text-[11px] tracking-[0.22em] text-muted-foreground uppercase transition-colors hover:border-bronze hover:text-bronze"
               >
                 <Upload className="size-4" strokeWidth={1.25} />
-                Add photos of your existing staircase
+                Add photos of your project
               </button>
               {files.length > 0 && (
                 <ul className="mt-4 space-y-2">
@@ -136,22 +167,24 @@ export function ContactSection() {
 
             <div className="sm:col-span-2">
               <button type="submit" className="btn-base btn-solid w-full sm:w-auto">
-                Request My Quote
+                Get My Free Estimate
               </button>
             </div>
           </form>
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="font-serif text-xl tracking-[0.16em] uppercase">Element</p>
-          <p className="mt-1 text-[10px] tracking-[0.34em] text-muted-foreground uppercase">
-            Stairs &amp; Railings
+          <p className="font-serif text-xl tracking-[0.06em] uppercase">{business.shortName}</p>
+          <p className="mt-1 text-[10px] tracking-[0.24em] text-muted-foreground uppercase">
+            Stairs &amp; Home Remodeling
           </p>
 
           <ul className="mt-12 space-y-8">
             {contacts.map((c) => (
               <li key={c.tel}>
-                <p className="eyebrow">{c.name}</p>
+                <p className="eyebrow">
+                  {c.name} — {c.role}
+                </p>
                 <a
                   href={`tel:${c.tel}`}
                   className="mt-2 block font-serif text-2xl transition-colors hover:text-bronze"
@@ -174,8 +207,9 @@ export function ContactSection() {
             <li>
               <p className="eyebrow">Service Area</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Fort Lauderdale, Broward County and South Florida.
+                {business.cities.join(", ")} and surrounding areas, FL.
               </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{business.hours}</p>
             </li>
           </ul>
         </Reveal>

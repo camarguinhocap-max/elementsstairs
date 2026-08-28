@@ -6,9 +6,9 @@ import { PageHero } from "@/components/site/PageHero";
 import { ContactSection } from "@/components/site/ContactSection";
 import { images } from "@/lib/site-data";
 
-const title = "Request a Quote — Custom Stairs & Railings | Fort Lauderdale, FL";
+const title = "Get a Free Estimate — Stairs & Home Remodeling | Element Home Remodeling";
 const description =
-  "Tell us about your staircase project and upload photos of your existing stairs. Serving Fort Lauderdale, Broward County and South Florida.";
+  "Tell us about your stair or remodeling project and upload photos. Serving Ocala, Orlando, Gainesville and Tampa, FL.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,32 +19,42 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/contact" },
+      { property: "og:url", content: "https://ehrremodeling.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/contact" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-          {
-            "@type": "ContactPage",
-            "@id": "https://elementsstairs.lovable.app/contact#page",
-            url: "https://elementsstairs.lovable.app/contact",
-            name: title,
-            description,
-            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
-            about: { "@id": "https://elementsstairs.lovable.app/#business" },
-            inLanguage: "en-US",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Contact", item: "https://elementsstairs.lovable.app/contact" },
-            ],
-          },
+            {
+              "@type": "ContactPage",
+              "@id": "https://ehrremodeling.com/contact#page",
+              url: "https://ehrremodeling.com/contact",
+              name: title,
+              description,
+              isPartOf: { "@id": "https://ehrremodeling.com/#website" },
+              about: { "@id": "https://ehrremodeling.com/#business" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://ehrremodeling.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Contact",
+                  item: "https://ehrremodeling.com/contact",
+                },
+              ],
+            },
           ],
         }),
       },
@@ -60,8 +70,8 @@ function ContactPage() {
       <main>
         <PageHero
           eyebrow="Contact"
-          title="Let's Talk About Your Project."
-          intro="Share your space, style and timeline — photos of your existing staircase help us respond with a clearer quote."
+          title="Get a Free Estimate."
+          intro="Tell us about your project and timeline — photos help us respond with a clearer estimate."
           image={images.cta}
         />
         <ContactSection />

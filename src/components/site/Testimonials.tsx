@@ -3,9 +3,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const testimonials = [
-  { quote: "[Customer review will be inserted here.]", name: "Customer Name", city: "Fort Lauderdale, FL" },
-  { quote: "[Customer review will be inserted here.]", name: "Customer Name", city: "Weston, FL" },
-  { quote: "[Customer review will be inserted here.]", name: "Customer Name", city: "Boca Raton, FL" },
+  { quote: "[Customer review will be inserted here.]", name: "Customer Name", city: "Ocala, FL" },
+  { quote: "[Customer review will be inserted here.]", name: "Customer Name", city: "Orlando, FL" },
+  {
+    quote: "[Customer review will be inserted here.]",
+    name: "Customer Name",
+    city: "Gainesville, FL",
+  },
 ];
 
 export function Testimonials() {
@@ -57,7 +61,10 @@ export function Testimonials() {
         </div>
         <p className="mt-12 text-xs text-muted-foreground">
           Placeholder reviews. Real Google and customer reviews can be inserted here.
-          <span className="sr-only"> Currently showing testimonial {i + 1} by {item.name}.</span>
+          <span className="sr-only">
+            {" "}
+            Currently showing testimonial {i + 1} by {item.name}.
+          </span>
         </p>
       </div>
     </section>

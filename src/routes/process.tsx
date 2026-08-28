@@ -9,9 +9,9 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { materials } from "@/lib/site-data";
 
-const title = "Our Process — From Vision to Installation | Element Stairs & Railings";
+const title = "Our Process — From Estimate to Installation | Element Home Remodeling";
 const description =
-  "Consultation, design, craftsmanship and installation: how Element Stairs & Railings plans and builds a custom staircase or railing project.";
+  "How Element Home Remodeling plans and builds a stair or remodeling project: estimate, design, materials, and on-site installation.";
 
 export const Route = createFileRoute("/process")({
   head: () => ({
@@ -22,32 +22,42 @@ export const Route = createFileRoute("/process")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/process" },
+      { property: "og:url", content: "https://ehrremodeling.com/process" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/process" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/process" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-          {
-            "@type": "WebPage",
-            "@id": "https://elementsstairs.lovable.app/process#page",
-            url: "https://elementsstairs.lovable.app/process",
-            name: title,
-            description,
-            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
-            about: { "@id": "https://elementsstairs.lovable.app/#business" },
-            inLanguage: "en-US",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Process", item: "https://elementsstairs.lovable.app/process" },
-            ],
-          },
+            {
+              "@type": "WebPage",
+              "@id": "https://ehrremodeling.com/process#page",
+              url: "https://ehrremodeling.com/process",
+              name: title,
+              description,
+              isPartOf: { "@id": "https://ehrremodeling.com/#website" },
+              about: { "@id": "https://ehrremodeling.com/#business" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://ehrremodeling.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Process",
+                  item: "https://ehrremodeling.com/process",
+                },
+              ],
+            },
           ],
         }),
       },
@@ -63,8 +73,8 @@ function ProcessPage() {
       <main>
         <PageHero
           eyebrow="Our Process"
-          title="From Vision to Installation."
-          intro="A clear, considered process — from the first conversation about your space to the final detail on site."
+          title="From Free Estimate to Final Walkthrough."
+          intro="A clear process, start to finish — so you know the timeline and scope before we ever start work."
           image={materials[3]!.image}
         />
         <ProcessSection />

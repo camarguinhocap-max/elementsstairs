@@ -3,23 +3,23 @@ import { Reveal } from "./Reveal";
 const steps = [
   {
     n: "01",
-    title: "Consultation",
-    copy: "We discuss your space, ideas, style and project goals.",
+    title: "Free Estimate",
+    copy: "We visit or review your photos and give you a clear, no-pressure estimate.",
   },
   {
     n: "02",
-    title: "Design",
-    copy: "Materials, railing styles and architectural details are carefully selected.",
+    title: "Materials & Scope",
+    copy: "Materials, timeline and scope are confirmed in writing before work starts.",
   },
   {
     n: "03",
-    title: "Craftsmanship",
-    copy: "Each component is built and prepared with precision.",
+    title: "Build",
+    copy: "Each component is built and prepared with precision, on the agreed schedule.",
   },
   {
     n: "04",
     title: "Installation",
-    copy: "Our team completes the installation with attention to every detail.",
+    copy: "Our team completes the installation and walks the finished job with you.",
   },
 ];
 
@@ -35,7 +35,10 @@ export function ProcessSection() {
         {steps.map((s, i) => (
           <Reveal key={s.n} as="li" delay={i * 120} className="relative">
             <span className="absolute -top-8 left-0 hidden h-px w-full origin-left bg-border lg:block">
-              <span className="block h-px w-full origin-left scale-x-0 animate-[lineIn_1.6s_ease-out_forwards] bg-bronze" style={{ animationDelay: `${i * 220}ms` }} />
+              <span
+                className="block h-px w-full origin-left scale-x-0 animate-[lineIn_1.6s_ease-out_forwards] bg-bronze"
+                style={{ animationDelay: `${i * 220}ms` }}
+              />
             </span>
             <span className="font-serif text-4xl text-bronze">{s.n}</span>
             <h3 className="mt-6 font-serif text-2xl">{s.title}</h3>

@@ -81,7 +81,9 @@ function Slider({
       </div>
       <figcaption className="mt-5 flex items-baseline justify-between gap-4">
         <span className="font-serif text-xl">{title}</span>
-        <span className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">{place}</span>
+        <span className="text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+          {place}
+        </span>
       </figcaption>
     </figure>
   );

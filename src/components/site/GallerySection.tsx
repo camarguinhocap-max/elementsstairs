@@ -62,7 +62,12 @@ export function GallerySection() {
         </div>
       </div>
 
-      <Lightbox items={items} index={index} onClose={() => setIndex(null)} onIndexChange={setIndex} />
+      <Lightbox
+        items={items}
+        index={index}
+        onClose={() => setIndex(null)}
+        onIndexChange={setIndex}
+      />
     </section>
   );
 }

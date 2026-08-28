@@ -3,13 +3,13 @@ import { contacts, images } from "@/lib/site-data";
 import { Reveal } from "./Reveal";
 
 export function FinalCta() {
-  const office = contacts[2]!;
+  const office = contacts[0]!;
 
   return (
     <section className="relative isolate overflow-hidden bg-ink">
       <img
         src={images.cta}
-        alt="Sculptural dark staircase in a luxury living space at dusk"
+        alt="Custom staircase installed in a Central Florida home"
         width={1920}
         height={1088}
         loading="lazy"
@@ -20,19 +20,19 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-[1600px] px-6 py-32 sm:px-10 sm:py-48">
         <Reveal className="max-w-3xl">
           <h2 className="display-sm text-ink-foreground">
-            Your Staircase Can Transform
+            Ready to Start Your
             <br />
-            The Entire Space.
+            Stair or Remodeling Project?
           </h2>
           <p className="mt-8 text-[15px] leading-relaxed text-ink-muted">
-            Let&rsquo;s create something exceptional for your home.
+            Free estimates, honest timelines, and a clean job site from start to finish.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link to="/contact" className="btn-base btn-solid">
-              Request a Quote
+              Free Estimate
             </Link>
             <a href={`tel:${office.tel}`} className="btn-base btn-outline-light">
-              Call Us
+              Call {office.phone}
             </a>
           </div>
         </Reveal>

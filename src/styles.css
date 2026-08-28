@@ -5,20 +5,26 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * ELEMENT STAIRS & RAILINGS — design system
- * Warm ivory, charcoal ink, natural wood + bronze accents.
+ * EHR REMODELING — design system
+ * Warm neutral, charcoal ink, natural wood + EHR brand-blue accent.
+ * Deliberately less "editorial luxury" than the original Element Stairs
+ * concept: heavier type weights, tighter letter-spacing on labels, softer
+ * corners — built to read as trustworthy and approachable for homeowners,
+ * not as a high-end design boutique.
  * All colors are oklch tokens. Never hardcode colors in components.
+ * NOTE: the `--bronze` variable name is kept (many components reference
+ * `bronze` utilities) but it now carries the EHR brand blue, not bronze/gold.
  */
 
 @theme inline {
-  --radius-sm: 0px;
-  --radius-md: 1px;
-  --radius-lg: 2px;
-  --radius-xl: 2px;
-  --radius-2xl: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 14px;
 
-  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
-  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Zilla Slab", Georgia, "Times New Roman", serif;
+  --font-sans: "Work Sans", "Helvetica Neue", Arial, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,31 +53,32 @@
 }
 
 :root {
-  --radius: 0px;
+  --radius: 6px;
   --background: oklch(0.973 0.006 85);
-  --foreground: oklch(0.235 0.008 60);
+  --foreground: oklch(0.2 0.008 60);
   --card: oklch(0.955 0.008 82);
-  --card-foreground: oklch(0.235 0.008 60);
+  --card-foreground: oklch(0.2 0.008 60);
   --popover: oklch(0.973 0.006 85);
-  --popover-foreground: oklch(0.235 0.008 60);
+  --popover-foreground: oklch(0.2 0.008 60);
   --primary: oklch(0.195 0.006 60);
   --primary-foreground: oklch(0.975 0.006 85);
   --secondary: oklch(0.93 0.008 82);
   --secondary-foreground: oklch(0.235 0.008 60);
   --muted: oklch(0.935 0.008 82);
-  --muted-foreground: oklch(0.52 0.012 70);
-  --accent: oklch(0.7 0.055 68);
-  --accent-foreground: oklch(0.19 0.006 60);
+  --muted-foreground: oklch(0.46 0.012 70);
+  --accent: oklch(0.48 0.13 254);
+  --accent-foreground: oklch(0.975 0.006 85);
   --destructive: oklch(0.51 0.16 27);
   --destructive-foreground: oklch(0.975 0.006 85);
   --border: oklch(0.885 0.008 80);
   --input: oklch(0.885 0.008 80);
-  --ring: oklch(0.7 0.055 68);
+  --ring: oklch(0.48 0.13 254);
   --ink: oklch(0.168 0.006 60);
   --ink-foreground: oklch(0.965 0.006 85);
   --ink-muted: oklch(0.72 0.012 78);
-  --bronze: oklch(0.72 0.06 70);
-  --wood: oklch(0.63 0.07 62);
+  /* EHR brand blue — variable named `bronze` for compatibility, see note above */
+  --bronze: oklch(0.55 0.14 254);
+  --wood: oklch(0.6 0.075 62);
 }
 
 @layer base {
@@ -88,7 +95,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
   }
 
   h1,
@@ -96,26 +103,26 @@
   h3,
   blockquote {
     font-family: var(--font-serif);
-    font-weight: 300;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    letter-spacing: -0.005em;
   }
 }
 
-/* Editorial eyebrow label */
+/* Section eyebrow label */
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
-  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-muted-foreground);
 }
 
 @utility eyebrow-light {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
-  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-bronze);
 }
@@ -123,18 +130,18 @@
 /* Display headline scale */
 @utility display {
   font-family: var(--font-serif);
-  font-weight: 300;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
 }
 
 @utility display-sm {
   font-family: var(--font-serif);
-  font-weight: 300;
-  line-height: 1.08;
-  letter-spacing: -0.015em;
-  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.008em;
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
 }
 
 /* Buttons */
@@ -163,7 +170,7 @@
   &:hover {
     background-color: var(--color-bronze);
     border-color: var(--color-bronze);
-    color: var(--color-ink);
+    color: var(--color-ink-foreground);
   }
 }
 

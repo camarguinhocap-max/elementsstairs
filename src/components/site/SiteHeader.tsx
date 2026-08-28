@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { business } from "@/lib/site-data";
 
 const nav = [
   { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
+  { label: "Stairs", to: "/stairs" },
   { label: "Services", to: "/services" },
   { label: "Projects", to: "/projects" },
-  { label: "Process", to: "/process" },
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -35,11 +36,11 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 sm:px-10">
         <Link to="/" className="group" onClick={() => setOpen(false)}>
-          <span className="block font-serif text-base leading-none tracking-[0.22em] text-ink-foreground uppercase sm:text-lg">
-            Element
+          <span className="block font-serif text-base leading-none tracking-[0.1em] text-ink-foreground uppercase sm:text-lg">
+            {business.shortName}
           </span>
-          <span className="mt-1 block text-[9px] leading-none tracking-[0.36em] text-ink-muted uppercase">
-            Stairs &amp; Railings
+          <span className="mt-1 block text-[9px] leading-none tracking-[0.28em] text-ink-muted uppercase">
+            Stairs &amp; Home Remodeling
           </span>
         </Link>
 
@@ -56,7 +57,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             </Link>
           ))}
           <Link to="/contact" className="btn-base btn-outline-light px-6 py-3">
-            Request a Quote
+            Free Estimate
           </Link>
         </nav>
 
@@ -65,7 +66,11 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           aria-label={open ? "Close menu" : "Open menu"}
           className="p-1 text-ink-foreground lg:hidden"
         >
-          {open ? <X className="size-6" strokeWidth={1} /> : <Menu className="size-6" strokeWidth={1} />}
+          {open ? (
+            <X className="size-6" strokeWidth={1} />
+          ) : (
+            <Menu className="size-6" strokeWidth={1} />
+          )}
         </button>
       </div>
 
@@ -91,7 +96,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             onClick={() => setOpen(false)}
             className="btn-base btn-outline-light mt-2 self-start"
           >
-            Request a Quote
+            Free Estimate
           </Link>
         </nav>
       </div>

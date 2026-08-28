@@ -9,9 +9,9 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { images } from "@/lib/site-data";
 
-const title = "About Element Stairs & Railings | South Florida Staircase Craftsmen";
+const title = "About Element Home Remodeling | Central Florida Stairs & Remodeling";
 const description =
-  "A South Florida workshop specializing in custom staircases, railings and stair remodeling, combining woodworking, metalwork and glass with architectural design.";
+  "Element Home Remodeling builds custom oak staircases and handles general home remodeling — kitchens, bathrooms, carpentry, painting — for homeowners across Central Florida.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,32 +22,42 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/about" },
+      { property: "og:url", content: "https://ehrremodeling.com/about" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/about" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/about" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-          {
-            "@type": "AboutPage",
-            "@id": "https://elementsstairs.lovable.app/about#page",
-            url: "https://elementsstairs.lovable.app/about",
-            name: title,
-            description,
-            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
-            about: { "@id": "https://elementsstairs.lovable.app/#business" },
-            inLanguage: "en-US",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "About", item: "https://elementsstairs.lovable.app/about" },
-            ],
-          },
+            {
+              "@type": "AboutPage",
+              "@id": "https://ehrremodeling.com/about#page",
+              url: "https://ehrremodeling.com/about",
+              name: title,
+              description,
+              isPartOf: { "@id": "https://ehrremodeling.com/#website" },
+              about: { "@id": "https://ehrremodeling.com/#business" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://ehrremodeling.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "About",
+                  item: "https://ehrremodeling.com/about",
+                },
+              ],
+            },
           ],
         }),
       },
@@ -63,8 +73,8 @@ function AboutPage() {
       <main>
         <PageHero
           eyebrow="About"
-          title="Craftsmanship that elevates your home."
-          intro="Element Stairs & Railings is a South Florida studio and workshop building custom stairs, railings and handrails in wood, metal and glass."
+          title="Stairs first. Then the rest of the home."
+          intro="Element Home Remodeling started with oak wood staircases and stair remodeling, and has grown into general home remodeling — kitchens, bathrooms, carpentry and painting — for homeowners across Central Florida."
           image={images.intro}
         />
         <Intro />

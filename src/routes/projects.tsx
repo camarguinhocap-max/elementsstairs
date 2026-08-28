@@ -10,9 +10,9 @@ import { InstagramSection } from "@/components/site/InstagramSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { projects } from "@/lib/site-data";
 
-const title = "Luxury Staircase Projects & Portfolio | Element Stairs & Railings";
+const title = "Staircase Projects & Portfolio | Element Home Remodeling";
 const description =
-  "Selected staircase and railing projects: floating stairs, wood stairs, glass railings, metal railings and complete staircase renovations in South Florida.";
+  "Recent staircase and railing projects — oak stairs, wood stairs, glass railings, metal railings and full staircase renovations — in Ocala, Orlando, Gainesville and Tampa, FL.";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -23,46 +23,56 @@ export const Route = createFileRoute("/projects")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/projects" },
+      { property: "og:url", content: "https://ehrremodeling.com/projects" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/projects" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/projects" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
-          {
-            "@type": "CollectionPage",
-            "@id": "https://elementsstairs.lovable.app/projects#page",
-            url: "https://elementsstairs.lovable.app/projects",
-            name: title,
-            description,
-            isPartOf: { "@id": "https://elementsstairs.lovable.app/#website" },
-            about: { "@id": "https://elementsstairs.lovable.app/#business" },
-            inLanguage: "en-US",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://elementsstairs.lovable.app/" },
-              { "@type": "ListItem", position: 2, name: "Projects", item: "https://elementsstairs.lovable.app/projects" },
-            ],
-          },
-          {
-            "@type": "ItemList",
-            name: "Selected staircase and railing projects",
-            itemListElement: projects.map((p, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              item: {
-                "@type": "CreativeWork",
-                name: p.title,
-                description: p.description,
-                genre: p.category,
-              },
-            })),
-          },
+            {
+              "@type": "CollectionPage",
+              "@id": "https://ehrremodeling.com/projects#page",
+              url: "https://ehrremodeling.com/projects",
+              name: title,
+              description,
+              isPartOf: { "@id": "https://ehrremodeling.com/#website" },
+              about: { "@id": "https://ehrremodeling.com/#business" },
+              inLanguage: "en-US",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://ehrremodeling.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Projects",
+                  item: "https://ehrremodeling.com/projects",
+                },
+              ],
+            },
+            {
+              "@type": "ItemList",
+              name: "Selected staircase and railing projects",
+              itemListElement: projects.map((p, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                item: {
+                  "@type": "CreativeWork",
+                  name: p.title,
+                  description: p.description,
+                  genre: p.category,
+                },
+              })),
+            },
           ],
         }),
       },
@@ -78,8 +88,8 @@ function ProjectsPage() {
       <main>
         <PageHero
           eyebrow="Projects"
-          title="Selected Projects"
-          intro="Craftsmanship designed around architecture. Explore recent staircases, railings and transformations."
+          title="Recent Work"
+          intro="Real staircases, railings and remodeling transformations from homes across Central Florida."
           image={projects[5]!.image}
         />
         <FeaturedProjects />

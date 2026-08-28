@@ -16,9 +16,9 @@ import { InstagramSection } from "@/components/site/InstagramSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { ContactSection } from "@/components/site/ContactSection";
 
-const title = "Custom Stairs & Railings in South Florida | Element Stairs & Railings";
+const title = "Oak Wood Staircases & Home Remodeling in Central Florida | Element Home Remodeling";
 const description =
-  "Element Stairs & Railings designs and builds custom staircases, stair remodeling, wood stairs, glass and metal railings for homes in Fort Lauderdale and South Florida.";
+  "Element Home Remodeling builds custom oak wood staircases, stair remodeling, and general home remodeling — kitchens, bathrooms, carpentry, painting — for Ocala, Orlando, Gainesville and Tampa, FL.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,9 +29,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://elementsstairs.lovable.app/" },
+      { property: "og:url", content: "https://ehrremodeling.com/" },
     ],
-    links: [{ rel: "canonical", href: "https://elementsstairs.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://ehrremodeling.com/" }],
   }),
   component: Index,
 });
