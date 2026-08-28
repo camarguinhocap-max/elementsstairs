@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { business } from "@/lib/site-data";
+import { business, logo } from "@/lib/site-data";
 
 const nav = [
   { label: "Home", to: "/" },
@@ -35,12 +35,19 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
       )}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 sm:px-10">
-        <Link to="/" className="group" onClick={() => setOpen(false)}>
-          <span className="block font-serif text-base leading-none tracking-[0.1em] text-ink-foreground uppercase sm:text-lg">
-            {business.shortName}
-          </span>
-          <span className="mt-1 block text-[9px] leading-none tracking-[0.28em] text-ink-muted uppercase">
-            Stairs &amp; Home Remodeling
+        <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+          <img
+            src={logo.icon}
+            alt=""
+            className="h-9 w-9 shrink-0 rounded bg-white p-1 sm:h-11 sm:w-11"
+          />
+          <span className="flex flex-col">
+            <span className="block font-serif text-base leading-none tracking-[0.05em] text-ink-foreground uppercase sm:text-lg">
+              {business.name}
+            </span>
+            <span className="mt-1 block text-[9px] leading-none tracking-[0.28em] text-ink-muted uppercase">
+              Stairs &amp; Home Remodeling
+            </span>
           </span>
         </Link>
 

@@ -174,7 +174,7 @@ export function ContactSection({
         </Reveal>
 
         <Reveal delay={120}>
-          <p className="font-serif text-xl tracking-[0.06em] uppercase">{business.shortName}</p>
+          <p className="font-serif text-xl tracking-[0.06em] uppercase">{business.name}</p>
           <p className="mt-1 text-[10px] tracking-[0.24em] text-muted-foreground uppercase">
             Stairs &amp; Home Remodeling
           </p>

@@ -17,6 +17,8 @@ import ba2After from "@/assets/ba2-after.jpg";
 import ba3Before from "@/assets/ba3-before.jpg";
 import ba3After from "@/assets/ba3-after.jpg";
 import ctaStaircase from "@/assets/cta-staircase.jpg";
+import logoFull from "@/assets/logo.png";
+import logoIcon from "@/assets/logo-icon.png";
 
 export const images = {
   hero: heroStaircase,
@@ -24,12 +26,15 @@ export const images = {
   cta: ctaStaircase,
 };
 
+export const logo = {
+  full: logoFull,
+  icon: logoIcon,
+};
+
 // ---------------------------------------------------------------------------
-// Business identity
-// NOTE: "name" is a placeholder pending final confirmation from the client —
-// the launch checklist has this marked as "not confirmed yet". The domain and
-// logo mood board point to the EHR short form, so that is used as the primary
-// display name for now. Update in one place here once confirmed.
+// Business identity — confirmed: "Element Home Remodeling" is the official
+// display name; "EHR Remodeling" remains available as a short form for tight
+// spaces (e.g. mobile nav) if ever needed.
 // ---------------------------------------------------------------------------
 export const business = {
   name: "Element Home Remodeling",
@@ -190,25 +195,30 @@ export const services: Service[] = [
     image: detailCraft,
     group: "stairs",
   },
-  // General remodeling — real services offered, photos to be added once available.
+  // General remodeling — real services offered; using existing project photography
+  // until dedicated kitchen/bath/carpentry/painting photos are available.
   {
     title: "Kitchen Remodeling",
     copy: "Full and partial kitchen remodels — cabinetry, counters, finishes and layout changes.",
+    image: detailWood,
     group: "remodeling",
   },
   {
     title: "Bathroom Remodeling",
     copy: "Bathroom renovations from a full gut to a refresh of fixtures, tile and finishes.",
+    image: projectGlass,
     group: "remodeling",
   },
   {
     title: "Carpentry",
     copy: "Custom carpentry and trim work built and finished to match the rest of your home.",
+    image: detailCraft,
     group: "remodeling",
   },
   {
     title: "Interior Painting",
     copy: "Interior painting and stain work, prepped and finished to a clean, lasting result.",
+    image: projectModern,
     group: "remodeling",
   },
 ];

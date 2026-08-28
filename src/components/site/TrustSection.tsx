@@ -9,7 +9,7 @@ export function TrustSection() {
           <h2 className="display-sm">
             Why Homeowners
             <br />
-            Choose {business.shortName}.
+            Choose {business.name}.
           </h2>
           <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-ink-muted">
             {business.insurance}. Free estimates, no pressure, and a straight answer about timeline

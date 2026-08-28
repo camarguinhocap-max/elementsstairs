@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { business, contacts, instagramHandle, instagramUrl, services } from "@/lib/site-data";
+import { business, contacts, instagramHandle, instagramUrl, logo, services } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -7,10 +7,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-6 py-20 sm:px-10 sm:py-24">
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-serif text-xl tracking-[0.08em] uppercase">{business.shortName}</p>
-            <p className="mt-1 text-[10px] tracking-[0.26em] text-ink-muted uppercase">
-              Stairs &amp; Home Remodeling
-            </p>
+            <div className="flex items-center gap-3">
+              <img src={logo.icon} alt="" className="h-10 w-10 shrink-0 rounded bg-white p-1" />
+              <div>
+                <p className="font-serif text-lg tracking-[0.04em] uppercase">{business.name}</p>
+                <p className="mt-1 text-[10px] tracking-[0.26em] text-ink-muted uppercase">
+                  Stairs &amp; Home Remodeling
+                </p>
+              </div>
+            </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-muted">
               Oak wood staircases and general home remodeling for {business.cities.join(", ")}, FL.{" "}
               {business.insurance}.
