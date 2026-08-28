@@ -68,9 +68,10 @@ export const business = {
 
 // WhatsApp isn't heavily used by US customers, but the client wants a small
 // floating button available anyway. Pre-fills the chat with an English
-// message when clicked. Uses Bia's number (estimates & scheduling).
+// message when clicked. Uses Léo's number for now (owner) — can switch to
+// Bia's or another number later if needed.
 export const whatsapp = {
-  tel: "19546964859",
+  tel: "19548265786",
   message: "Hi! I found you through your website and I'd like to get a free estimate.",
   get url() {
     return `https://wa.me/${this.tel}?text=${encodeURIComponent(this.message)}`;
