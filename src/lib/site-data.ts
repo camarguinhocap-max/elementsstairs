@@ -319,3 +319,35 @@ export const galleryItems = [
     description: "A curved handrail sanded and shaped by hand before installation.",
   },
 ];
+
+export const stairsFaq = [
+  {
+    question: "Do you build custom staircases in Ocala, FL?",
+    answer:
+      "Yes — Ocala is one of our core service areas, alongside Orlando, Gainesville and Tampa. We build oak wood staircases, remodel existing stairs, and install glass, metal or cable railings for homeowners throughout Central Florida.",
+  },
+  {
+    question: "How long does a stair remodel usually take?",
+    answer:
+      "Most stair remodels (new treads, risers and railings on an existing staircase) run 1–2 weeks once materials are ready. A full custom oak staircase built from the subfloor up takes longer. We give you a specific timeline with your free, no-pressure estimate.",
+  },
+  {
+    question: "What materials can I choose for my stair railing?",
+    answer:
+      "Solid oak, frameless glass, powder-coated black metal, or cable railing — we build around your home's existing layout and trim, so the staircase matches the rest of the house rather than looking bolted on.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer: `Yes — we carry ${business.insurance}. Ask us for proof of coverage when you request your free estimate.`,
+  },
+  {
+    question: "Can you remodel a staircase that currently has carpet?",
+    answer:
+      "Absolutely — replacing worn carpet with solid oak treads and risers, and updating a dated balustrade at the same time, is one of our most requested projects.",
+  },
+  {
+    question: "How much does a new staircase cost?",
+    answer:
+      "It depends on the size of the staircase, the materials you choose (oak, glass, metal or cable) and whether it's a full rebuild or a remodel of what's already there. We keep estimates free and honest — get in touch with a few photos of your current stairs for the most accurate number.",
+  },
+];

@@ -10,7 +10,8 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Reveal } from "@/components/site/Reveal";
-import { business, images } from "@/lib/site-data";
+import { FaqSection } from "@/components/site/FaqSection";
+import { business, images, stairsFaq } from "@/lib/site-data";
 
 const title = `Oak Wood Staircase & Stair Remodeling | ${business.name}`;
 const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates, ${business.insurance}.`;
@@ -58,6 +59,14 @@ export const Route = createFileRoute("/stairs")({
                 },
               ],
             },
+            {
+              "@type": "FAQPage",
+              mainEntity: stairsFaq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
           ],
         }),
       },
@@ -103,6 +112,7 @@ function StairsPage() {
         <MaterialDetails />
         <Testimonials />
         <TrustSection />
+        <FaqSection items={stairsFaq} title="Stair Remodeling — Frequently Asked Questions" />
         <ContactSection defaultProjectType="Oak Wood Staircase" />
       </main>
       <SiteFooter />
