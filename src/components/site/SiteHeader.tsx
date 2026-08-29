@@ -30,8 +30,8 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-out",
-        solid ? "bg-ink/95 py-4 backdrop-blur-md" : "bg-transparent py-7",
+        "fixed inset-x-0 top-0 z-50 transition-[background-color,padding,backdrop-filter] duration-300 ease-out",
+        solid ? "bg-ink/95 py-4 backdrop-blur-md" : "bg-ink/20 py-7",
       )}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 sm:px-10">
