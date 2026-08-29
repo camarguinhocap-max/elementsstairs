@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { business, contacts, images } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
-import heroVideo from "@/assets/hero-staircase.mp4.asset.json";
+import heroVideo from "@/assets/hero-staircase.mp4";
 
 export function Hero() {
   const [offset, setOffset] = useState(0);
@@ -27,7 +27,7 @@ export function Hero() {
       <div className="absolute inset-0" style={{ transform: `translate3d(0, ${offset}px, 0)` }}>
         <video
           ref={videoRef}
-          src={heroVideo.url}
+          src={heroVideo}
           poster={images.hero}
           autoPlay
           muted
