@@ -25,13 +25,20 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [overlay]);
 
-  const solid = scrolled || open;
+  const compact = scrolled || open;
 
+  // The header always has a solid, opaque background (no transparent
+  // "floating over the hero video" state). It used to fade in on scroll,
+  // but on some real Android phones the Hero heading could render behind
+  // the still-transparent header (even before any scroll), producing
+  // garbled overlapping text. A permanently solid header removes that
+  // failure mode entirely, regardless of the exact viewport-height quirk
+  // that caused it. Only the vertical padding still animates on scroll.
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-[background-color,padding,backdrop-filter] duration-300 ease-out",
-        solid ? "bg-ink/95 py-4 backdrop-blur-md" : "bg-ink/20 py-7",
+        "fixed inset-x-0 top-0 z-50 bg-ink/95 backdrop-blur-md transition-[padding] duration-300 ease-out",
+        compact ? "py-4" : "py-7",
       )}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 sm:px-10">
