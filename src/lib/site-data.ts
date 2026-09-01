@@ -76,14 +76,14 @@ export const business = {
 };
 
 // Google Analytics 4 — property "Element Home Remodeling" (separate GA4 account,
-// same access model as Search Console: Camarguinho manages day-to-day, Léo has
+// same access model as Search Console: Camarguinho manages day-to-day, Leonardo has
 // Administrator access too).
 export const ga4MeasurementId = "G-8JZN7FTGMS";
 
 // WhatsApp isn't heavily used by US customers, but the client wants a small
 // floating button available anyway. Pre-fills the chat with an English
-// message when clicked. Uses Léo's number for now (owner) — can switch to
-// Bia's or another number later if needed.
+// message when clicked. Uses Leonardo's number for now (owner) — can switch to
+// Bianca's or another number later if needed.
 export const whatsapp = {
   tel: "19548265786",
   message: "Hi! I found you through your website and I'd like to get a free estimate.",
@@ -97,8 +97,8 @@ export const instagramHandle = "@ehrremodeling";
 export const instagramUrl = "https://instagram.com/ehrremodeling";
 
 export const contacts = [
-  { name: "Bia", role: "Estimates & Scheduling", phone: "(954) 696-4859", tel: "+19546964859" },
-  { name: "Léo", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
+  { name: "Bianca Moreira", role: "Estimates & Scheduling", phone: "(954) 696-4859", tel: "+19546964859" },
+  { name: "Leonardo Haluche", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
 ];
 
 export type Project = {

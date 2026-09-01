@@ -26,7 +26,7 @@ const fieldClass =
 // scoped only to receiving this one form's submissions). Notifications
 // currently go to camarguinhocap@gmail.com; swap the recipient in the
 // Web3Forms dashboard (Element Home Remodeling — Estimate Form → Settings)
-// once Léo verifies leonardohaluche@gmail.com there.
+// once Leonardo verifies lhaluche@gmail.com there.
 const WEB3FORMS_ACCESS_KEY = "8397f17d-5bc1-446d-a7ae-f2cbbd382997";
 
 // Cloudinary (cloudinary.com) — free plan, used only to host photos the
