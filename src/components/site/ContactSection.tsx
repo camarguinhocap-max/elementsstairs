@@ -23,10 +23,9 @@ const fieldClass =
 
 // Web3Forms (web3forms.com) — free forever, no backend needed. This is the
 // form's public access key (safe to expose client-side, same as an API key
-// scoped only to receiving this one form's submissions). Notifications
-// currently go to camarguinhocap@gmail.com; swap the recipient in the
-// Web3Forms dashboard (Element Home Remodeling — Estimate Form → Settings)
-// once Leonardo verifies lhaluche@gmail.com there.
+// scoped only to receiving this one form's submissions). Notifications go to
+// elementhr.954@gmail.com (set directly in the Web3Forms dashboard —
+// Element Home Remodeling — Estimate Form → Settings — not in this repo).
 const WEB3FORMS_ACCESS_KEY = "8397f17d-5bc1-446d-a7ae-f2cbbd382997";
 
 // Cloudinary (cloudinary.com) — free plan, used only to host photos the

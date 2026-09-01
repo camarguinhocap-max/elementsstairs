@@ -97,7 +97,12 @@ export const instagramHandle = "@ehrremodeling";
 export const instagramUrl = "https://instagram.com/ehrremodeling";
 
 export const contacts = [
-  { name: "Bianca Moreira", role: "Estimates & Scheduling", phone: "(954) 696-4859", tel: "+19546964859" },
+  {
+    name: "Bianca Moreira",
+    role: "Estimates & Scheduling",
+    phone: "(954) 696-4859",
+    tel: "+19546964859",
+  },
   { name: "Leonardo Haluche", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
 ];
 
