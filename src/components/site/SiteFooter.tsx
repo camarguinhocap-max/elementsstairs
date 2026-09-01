@@ -22,6 +22,7 @@ export function SiteFooter() {
               {business.insurance}.
             </p>
             <p className="mt-4 text-sm text-ink-muted">{business.hours}</p>
+            <p className="mt-4 text-sm text-ink-muted">{business.address.full}</p>
           </div>
 
           <div>

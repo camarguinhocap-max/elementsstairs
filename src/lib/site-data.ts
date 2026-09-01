@@ -58,9 +58,18 @@ export const business = {
       copy: "Realistic timelines we commit to, so your home isn't a job site longer than it has to be.",
     },
   ],
-  // TODO: confirm street address — still open on the launch checklist. Follow up
-  // with the client closer to launch, per their explicit request.
-  address: null as string | null,
+  // Confirmed by the client (physical/mailing address — this is where the
+  // business is based, not a service area; the service cities below are a
+  // separate list of where jobs actually happen, in Central Florida).
+  address: {
+    street: "3721 NE 13th Terr",
+    city: "Pompano Beach",
+    state: "FL",
+    zip: "33064",
+    get full() {
+      return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
+    },
+  },
   cities: ["Ocala", "Orlando", "Gainesville", "Tampa"],
   state: "FL",
   email: "contact@ehrremodeling.com",

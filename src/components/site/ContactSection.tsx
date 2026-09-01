@@ -290,6 +290,12 @@ export function ContactSection({
               </p>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{business.hours}</p>
             </li>
+            <li>
+              <p className="eyebrow">Office</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {business.address.full}
+              </p>
+            </li>
           </ul>
         </Reveal>
       </div>
