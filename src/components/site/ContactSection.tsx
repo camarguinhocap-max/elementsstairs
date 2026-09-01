@@ -2,7 +2,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Upload, X } from "lucide-react";
 import { toast } from "sonner";
-import { business, contacts, instagramHandle, instagramUrl } from "@/lib/site-data";
+import { business, contacts, facebookHandle, facebookUrl } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "./Reveal";
 
@@ -272,14 +272,14 @@ export function ContactSection({
               </a>
             </li>
             <li>
-              <p className="eyebrow">Instagram</p>
+              <p className="eyebrow">Facebook</p>
               <a
-                href={instagramUrl}
+                href={facebookUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-2 block font-serif text-2xl transition-colors hover:text-bronze"
               >
-                {instagramHandle}
+                {facebookHandle}
               </a>
             </li>
             <li>

@@ -92,9 +92,9 @@ export const whatsapp = {
   },
 };
 
-// TODO: confirm the real Instagram handle before launch — this is a placeholder.
-export const instagramHandle = "@ehrremodeling";
-export const instagramUrl = "https://instagram.com/ehrremodeling";
+// Client decided to use Facebook instead of Instagram — confirmed handle.
+export const facebookHandle = "@ehrremodeling";
+export const facebookUrl = "https://facebook.com/ehrremodeling";
 
 export const contacts = [
   {

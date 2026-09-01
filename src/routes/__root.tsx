@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { business, contacts, instagramUrl, ga4MeasurementId } from "@/lib/site-data";
+import { business, contacts, facebookUrl, ga4MeasurementId } from "@/lib/site-data";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 function NotFoundComponent() {
@@ -141,7 +141,7 @@ gtag('config', '${ga4MeasurementId}');`,
                 "@type": "City",
                 name: `${city}, Florida`,
               })),
-              sameAs: [instagramUrl],
+              sameAs: [facebookUrl],
               openingHours: "Mo-Sa 08:00-17:00",
               contactPoint: contacts.map((c) => ({
                 "@type": "ContactPoint",

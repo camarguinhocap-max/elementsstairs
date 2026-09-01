@@ -6,7 +6,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { FeaturedProjects } from "@/components/site/FeaturedProjects";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { GallerySection } from "@/components/site/GallerySection";
-import { InstagramSection } from "@/components/site/InstagramSection";
+import { FacebookSection } from "@/components/site/FacebookSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { projects } from "@/lib/site-data";
 
@@ -95,7 +95,7 @@ function ProjectsPage() {
         <FeaturedProjects />
         <BeforeAfter />
         <GallerySection />
-        <InstagramSection />
+        <FacebookSection />
         <FinalCta />
       </main>
       <SiteFooter />

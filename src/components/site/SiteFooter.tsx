@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { business, contacts, instagramHandle, instagramUrl, logo, services } from "@/lib/site-data";
+import { business, contacts, facebookHandle, facebookUrl, logo, services } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 
 export function SiteFooter() {
@@ -93,12 +93,12 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href={instagramUrl}
+                  href={facebookUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="transition-colors hover:text-bronze"
                 >
-                  Instagram {instagramHandle}
+                  Facebook {facebookHandle}
                 </a>
               </li>
             </ul>
