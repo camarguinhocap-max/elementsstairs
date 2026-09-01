@@ -116,6 +116,20 @@ export function SiteFooter() {
             </Link>
           </div>
         </div>
+
+        <div className="mt-6 flex justify-center sm:justify-start">
+          <a
+            href="https://dividai.com/portfolio"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-1.5 text-[10px] tracking-[0.18em] text-ink-muted/60 uppercase transition-colors hover:text-bronze"
+          >
+            Website by Dividai
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </a>
+        </div>
       </div>
     </footer>
   );
