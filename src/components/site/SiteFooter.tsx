@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logo.icon} alt="" className="h-10 w-10 shrink-0 rounded bg-white p-1" />
+              <img src={logo.icon} alt="" className="h-10 w-10 shrink-0 rounded-md" />
               <div>
                 <p className="font-serif text-lg tracking-[0.04em] uppercase">{business.name}</p>
                 <p className="mt-1 text-[10px] tracking-[0.26em] text-ink-muted uppercase">

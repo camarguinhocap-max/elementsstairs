@@ -46,7 +46,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <img
             src={logo.icon}
             alt=""
-            className="h-9 w-9 shrink-0 rounded bg-white p-1 sm:h-11 sm:w-11"
+            className="h-9 w-9 shrink-0 rounded-md sm:h-11 sm:w-11"
           />
           <span className="flex flex-col">
             <span className="block font-serif text-base leading-none tracking-[0.05em] text-ink-foreground uppercase sm:text-lg">
