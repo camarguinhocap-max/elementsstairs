@@ -79,7 +79,7 @@ function AboutPage() {
         />
         <Intro />
         <MaterialDetails />
-        <TrustSection />
+        <TrustSection copy="Quality craftsmanship, clear communication, and attention to every detail. We approach every project with care, using premium materials and proven techniques to create results designed to look beautiful and last." />
         <FinalCta />
       </main>
       <SiteFooter />

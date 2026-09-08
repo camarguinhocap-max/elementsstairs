@@ -1,7 +1,7 @@
 import { business } from "@/lib/site-data";
 import { Reveal } from "./Reveal";
 
-export function TrustSection() {
+export function TrustSection({ copy }: { copy?: string } = {}) {
   return (
     <section className="bg-ink py-24 text-ink-foreground sm:py-36">
       <div className="mx-auto max-w-[1600px] px-6 sm:px-10">
@@ -12,8 +12,12 @@ export function TrustSection() {
             Choose {business.name}.
           </h2>
           <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-ink-muted">
-            {business.insurance}. Free estimates, no pressure, and a straight answer about timeline
-            and scope before we start.
+            {copy ?? (
+              <>
+                {business.insurance}. Free estimates, no pressure, and a straight answer about
+                timeline and scope before we start.
+              </>
+            )}
           </p>
         </Reveal>
 
