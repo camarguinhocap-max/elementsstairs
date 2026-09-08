@@ -89,7 +89,7 @@ function ServicesPage() {
       <main>
         <PageHero
           eyebrow="Services"
-          title="Stairs First. Then Everything Else."
+          title="Stairs First. Part of a Complete Home Transformation."
           intro="Oak wood staircases and stair remodeling are our priority — plus kitchen, bathroom, carpentry and painting for the rest of the home."
           image={projects[0]!.image}
         />
