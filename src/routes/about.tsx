@@ -73,7 +73,7 @@ function AboutPage() {
       <main>
         <PageHero
           eyebrow="About"
-          title="Stairs first. Then the rest of the home."
+          title="Quality in Every Detail."
           intro="Element Home Remodeling started with oak wood staircases and stair remodeling, and has grown into general home remodeling — kitchens, bathrooms, carpentry and painting — for homeowners across Central Florida."
           image={images.intro}
         />
