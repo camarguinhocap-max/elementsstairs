@@ -19,6 +19,9 @@ import ba3After from "@/assets/ba3-after.jpg";
 import ctaStaircase from "@/assets/cta-staircase.jpg";
 import serviceBathroom from "@/assets/service-bathroom.jpg";
 import servicePainting from "@/assets/service-painting.jpg";
+import serviceKitchen from "@/assets/service-kitchen.jpg";
+import serviceHandrails from "@/assets/service-handrails.jpg";
+import serviceCarpentry from "@/assets/service-carpentry.jpg";
 import logoFull from "@/assets/logo.png";
 import logoIcon from "@/assets/logo-icon.png";
 
@@ -227,15 +230,16 @@ export const services: Service[] = [
   {
     title: "Custom Handrails",
     copy: "Custom-designed wood and metal handrails built to complement the staircase and interior.",
-    image: detailCraft,
+    image: serviceHandrails,
     group: "stairs",
   },
-  // General remodeling — real services offered; using existing project photography
-  // until dedicated kitchen/bath/carpentry/painting photos are available.
+  // General remodeling — real services offered; each has its own dedicated
+  // image file (service-*.jpg) so it can be swapped independently without
+  // touching the Material Details or Portfolio photos.
   {
     title: "Kitchen Remodeling",
     copy: "Full and partial kitchen remodels — cabinetry, counters, finishes and layout changes.",
-    image: detailWood,
+    image: serviceKitchen,
     group: "remodeling",
   },
   {
@@ -247,7 +251,7 @@ export const services: Service[] = [
   {
     title: "Carpentry",
     copy: "Custom carpentry and trim work built and finished to match the rest of your home.",
-    image: detailCraft,
+    image: serviceCarpentry,
     group: "remodeling",
   },
   {
