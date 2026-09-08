@@ -17,6 +17,8 @@ import ba2After from "@/assets/ba2-after.jpg";
 import ba3Before from "@/assets/ba3-before.jpg";
 import ba3After from "@/assets/ba3-after.jpg";
 import ctaStaircase from "@/assets/cta-staircase.jpg";
+import serviceBathroom from "@/assets/service-bathroom.jpg";
+import servicePainting from "@/assets/service-painting.jpg";
 import logoFull from "@/assets/logo.png";
 import logoIcon from "@/assets/logo-icon.png";
 
@@ -239,7 +241,7 @@ export const services: Service[] = [
   {
     title: "Bathroom Remodeling",
     copy: "Bathroom renovations from a full gut to a refresh of fixtures, tile and finishes.",
-    image: projectGlass,
+    image: serviceBathroom,
     group: "remodeling",
   },
   {
@@ -251,7 +253,7 @@ export const services: Service[] = [
   {
     title: "Interior Painting",
     copy: "Interior painting and stain work, prepped and finished to a clean, lasting result.",
-    image: projectModern,
+    image: servicePainting,
     group: "remodeling",
   },
 ];
