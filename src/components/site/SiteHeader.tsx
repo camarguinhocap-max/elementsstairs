@@ -43,11 +43,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 sm:px-10">
         <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img
-            src={logo.icon}
-            alt=""
-            className="h-9 w-9 shrink-0 rounded-md sm:h-11 sm:w-11"
-          />
+          <img src={logo.icon} alt="" className="h-9 w-9 shrink-0 rounded-md sm:h-11 sm:w-11" />
           <span className="flex flex-col">
             <span className="block font-serif text-base leading-none tracking-[0.05em] text-ink-foreground uppercase sm:text-lg">
               {business.name}

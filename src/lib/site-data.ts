@@ -43,7 +43,7 @@ export const business = {
   siteUrl: "https://ehrremodeling.com",
   flagshipService: "Oak Wood Staircase",
   hours: "Monday–Saturday, 8:00 AM – 5:00 PM",
-  insurance: "$1,000,000 general liability insured",
+  insurance: "general liability insured",
   differentiators: [
     {
       title: "Organized Job Sites",

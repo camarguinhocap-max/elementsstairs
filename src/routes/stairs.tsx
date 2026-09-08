@@ -101,7 +101,8 @@ function StairsPage() {
               </p>
               <p>
                 We serve homeowners across {business.cities.join(", ")} and the surrounding areas.{" "}
-                {business.insurance} — ask us for proof of coverage with your free estimate.
+                We&rsquo;re {business.insurance} — ask us for proof of coverage with your free
+                estimate.
               </p>
             </div>
           </Reveal>
