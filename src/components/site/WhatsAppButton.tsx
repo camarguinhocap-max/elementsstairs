@@ -1,4 +1,4 @@
-import { whatsapp } from "@/lib/site-data";
+import { whatsapp, facebookUrl } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 
 /** Simple inline WhatsApp glyph — lucide-react has no brand icons. */
@@ -10,17 +10,38 @@ function WhatsAppIcon() {
   );
 }
 
+/** Simple inline Facebook glyph — lucide-react has no brand icons. */
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 32 32" fill="currentColor" className="size-6" aria-hidden="true">
+      <path d="M28 16.061C28 9.404 22.627 4 16 4S4 9.404 4 16.061c0 6.017 4.388 11.006 10.125 11.911v-8.425h-3.047v-3.486h3.047v-2.657c0-3.026 1.792-4.698 4.532-4.698 1.313 0 2.686.236 2.686.236v2.973h-1.513c-1.491 0-1.957.933-1.957 1.891v2.255h3.33l-.532 3.486h-2.798v8.425C23.612 27.067 28 22.078 28 16.061z" />
+    </svg>
+  );
+}
+
 export function WhatsAppButton() {
   return (
-    <a
-      href={whatsapp.url}
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Chat with us on WhatsApp"
-      onClick={() => trackEvent("whatsapp_click")}
-      className="fixed bottom-5 left-5 z-60 flex size-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform duration-300 hover:scale-105"
-    >
-      <WhatsAppIcon />
-    </a>
+    <div className="fixed bottom-5 left-5 z-60 flex items-center gap-3">
+      <a
+        href={whatsapp.url}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        onClick={() => trackEvent("whatsapp_click")}
+        className="flex size-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform duration-300 hover:scale-105"
+      >
+        <WhatsAppIcon />
+      </a>
+      <a
+        href={facebookUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Visit our Facebook page"
+        onClick={() => trackEvent("facebook_click")}
+        className="flex size-13 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-xl transition-transform duration-300 hover:scale-105"
+      >
+        <FacebookIcon />
+      </a>
+    </div>
   );
 }
