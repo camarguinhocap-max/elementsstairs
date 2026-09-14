@@ -283,7 +283,7 @@ export const transformations = [
     after: ba2After,
   },
   {
-    title: "Dated Balustrade Rebuilt",
+    title: "Structural Renovation",
     place: "Residential Project",
     before: ba3Before,
     after: ba3After,
