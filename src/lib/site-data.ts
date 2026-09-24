@@ -108,7 +108,7 @@ export const contacts = [
     phone: "(954) 696-4859",
     tel: "+19546964859",
   },
-  { name: "Leonardo Haluche", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
+  { name: "Jader Alencar", role: "Owner", phone: "(954) 588-4403", tel: "+19545884403" },
 ];
 
 export type Project = {
