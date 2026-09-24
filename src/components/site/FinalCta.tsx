@@ -10,7 +10,7 @@ export function FinalCta() {
     <section className="relative isolate overflow-hidden bg-ink">
       <img
         src={images.cta}
-        alt="Custom staircase installed in a Central Florida home"
+        alt="Custom staircase installed in a South Florida home"
         width={1920}
         height={1088}
         loading="lazy"

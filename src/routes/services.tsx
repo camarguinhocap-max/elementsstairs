@@ -11,7 +11,7 @@ import { projects, services } from "@/lib/site-data";
 
 const title = "Stairs, Railings & Home Remodeling Services | Element Home Remodeling";
 const description =
-  "Oak wood staircases, stair remodeling, metal and glass railings, plus kitchen, bathroom, carpentry and painting services for Central Florida homes.";
+  "Oak wood staircases, stair remodeling, metal and glass railings, plus kitchen, bathroom, carpentry and painting services for South Florida homes.";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -70,7 +70,7 @@ export const Route = createFileRoute("/services")({
                   description: s.copy,
                   serviceType: s.title,
                   provider: { "@id": "https://ehrremodeling.com/#business" },
-                  areaServed: "Central Florida",
+                  areaServed: "South Florida",
                 },
               })),
             },

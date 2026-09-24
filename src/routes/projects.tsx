@@ -89,7 +89,7 @@ function ProjectsPage() {
         <PageHero
           eyebrow="Projects"
           title="Recent Work"
-          intro="Real staircases, railings and remodeling transformations from homes across Central Florida."
+          intro="Real staircases, railings and remodeling transformations from homes across South Florida."
           image={projects[5]!.image}
         />
         <FeaturedProjects />

@@ -83,7 +83,7 @@ function StairsPage() {
         <PageHero
           eyebrow="Our Signature Service"
           title="Oak Wood Staircases, Built On Site."
-          intro="A new oak staircase is the single upgrade homeowners in Central Florida ask us for most. Free estimate, honest timeline, clean job site."
+          intro="A new oak staircase is the single upgrade homeowners in South Florida ask us for most. Free estimate, honest timeline, clean job site."
           image={images.intro}
         />
 

@@ -9,9 +9,9 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { images } from "@/lib/site-data";
 
-const title = "About Element Home Remodeling | Central Florida Stairs & Remodeling";
+const title = "About Element Home Remodeling | South Florida Stairs & Remodeling";
 const description =
-  "Element Home Remodeling builds custom oak staircases and handles general home remodeling — kitchens, bathrooms, carpentry, painting — for homeowners across Central Florida.";
+  "Element Home Remodeling builds custom oak staircases and handles general home remodeling — kitchens, bathrooms, carpentry, painting — for homeowners across South Florida.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -74,7 +74,7 @@ function AboutPage() {
         <PageHero
           eyebrow="About"
           title="Quality in Every Detail."
-          intro="Element Home Remodeling started with oak wood staircases and stair remodeling, and has grown into general home remodeling — kitchens, bathrooms, carpentry and painting — for homeowners across Central Florida."
+          intro="Element Home Remodeling started with oak wood staircases and stair remodeling, and has grown into general home remodeling — kitchens, bathrooms, carpentry and painting — for homeowners across South Florida."
           image={images.intro}
         />
         <Intro />
