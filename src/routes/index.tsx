@@ -18,7 +18,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 
 const title = "Oak Wood Staircases & Home Remodeling in Central Florida | Element Home Remodeling";
 const description =
-  "Element Home Remodeling builds custom oak wood staircases, stair remodeling, and general home remodeling — kitchens, bathrooms, carpentry, painting — for Ocala, Orlando, Gainesville and Tampa, FL.";
+  "Element Home Remodeling builds custom oak wood staircases, stair remodeling, and general home remodeling — kitchens, bathrooms, carpentry, painting — for Miami-Dade, Broward, Palm Beach and Orange, FL.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

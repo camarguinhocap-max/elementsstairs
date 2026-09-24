@@ -12,7 +12,7 @@ import { projects } from "@/lib/site-data";
 
 const title = "Staircase Projects & Portfolio | Element Home Remodeling";
 const description =
-  "Recent staircase and railing projects — oak stairs, wood stairs, glass railings, metal railings and full staircase renovations — in Ocala, Orlando, Gainesville and Tampa, FL.";
+  "Recent staircase and railing projects — oak stairs, wood stairs, glass railings, metal railings and full staircase renovations — in Miami-Dade, Broward, Palm Beach and Orange, FL.";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({

@@ -75,7 +75,7 @@ export const business = {
       return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
     },
   },
-  cities: ["Ocala", "Orlando", "Gainesville", "Tampa"],
+  cities: ["Miami-Dade", "Broward", "Palm Beach", "Orange"],
   state: "FL",
   email: "contact@ehrremodeling.com",
 };
