@@ -2,11 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { business, contacts, images } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
-import heroVideo from "@/assets/hero-staircase.mp4";
+import heroVideo from "@/assets/hero-staircase-720.mp4";
 
 export function Hero() {
   const [offset, setOffset] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
+  // Video only on larger screens with no data-saver: phones get the static poster
+  // image, which is what Google measures for LCP on mobile.
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+    const wide = window.matchMedia("(min-width: 768px)").matches;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setShowVideo(wide && !reduced && !conn?.saveData);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setOffset(Math.min(window.scrollY, 900) * 0.18);
@@ -20,24 +30,34 @@ export function Hero() {
     el.muted = true;
     const attempt = el.play();
     if (attempt && typeof attempt.catch === "function") attempt.catch(() => {});
-  }, []);
+  }, [showVideo]);
 
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden bg-ink">
       <div className="absolute inset-0" style={{ transform: `translate3d(0, ${offset}px, 0)` }}>
-        <video
-          ref={videoRef}
-          src={heroVideo}
-          poster={images.hero}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          disablePictureInPicture
-          aria-label="Cinematic footage of a custom floating staircase with white oak treads, black steel structure and glass railing"
-          className="h-[112%] w-full object-cover"
+        <img
+          src={images.hero}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-[112%] w-full object-cover"
         />
+        {showVideo && (
+          <video
+            ref={videoRef}
+            src={heroVideo}
+            poster={images.hero}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            disablePictureInPicture
+            aria-label="Cinematic footage of a custom floating staircase with white oak treads, black steel structure and glass railing"
+            className="relative h-[112%] w-full object-cover"
+          />
+        )}
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink/85" />
 

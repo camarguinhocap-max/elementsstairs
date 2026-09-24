@@ -15,6 +15,7 @@ export function PageHero({
         src={image}
         alt=""
         aria-hidden="true"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover opacity-55"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/55 to-ink/85" />
