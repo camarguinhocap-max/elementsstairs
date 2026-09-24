@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import workSansLatin from "@/assets/fonts/work-sans-latin-wght-normal.woff2?url";
+import zillaSlab700 from "@/assets/fonts/zilla-slab-latin-700-normal.woff2?url";
 import appCss from "../styles.css?url";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -92,12 +94,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap",
-      },
+      // Self-hosted fonts: preload the two files used above the fold.
+      { rel: "preload", href: workSansLatin, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: zillaSlab700, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
