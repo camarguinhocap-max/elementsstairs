@@ -14,7 +14,7 @@ export function TrustSection({ copy }: { copy?: string } = {}) {
           <p className="mt-8 max-w-xl text-[15px] leading-[1.9] text-ink-muted">
             {copy ?? (
               <>
-                {business.insurance}. Free estimates, no pressure, and a straight answer about
+                {business.insurance}. Free estimates, real before/after photos of every project, and organized job sites with clear timelines.
                 timeline and scope before we start.
               </>
             )}
