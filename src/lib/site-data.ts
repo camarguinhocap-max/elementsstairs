@@ -102,13 +102,13 @@ export const facebookHandle = "@ehrremodeling";
 export const facebookUrl = "https://facebook.com/ehrremodeling";
 
 export const contacts = [
+  { name: "Leonardo Haluche", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
   {
     name: "Bianca Moreira",
     role: "Estimates & Scheduling",
     phone: "(954) 696-4859",
     tel: "+19546964859",
   },
-  { name: "Leonardo Haluche", role: "Owner", phone: "(954) 826-5786", tel: "+19548265786" },
   { name: "Jader Alencar", role: "Owner", phone: "(954) 588-4403", tel: "+19545884403" },
 ];
 
