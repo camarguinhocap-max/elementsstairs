@@ -294,6 +294,23 @@ export function ContactSection({
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {business.address.full}
               </p>
+              {/* Keyless Google Maps embed — no API key needed for a simple pin. */}
+              <iframe
+                title={`Map of ${business.name} office`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(business.address.full)}&output=embed`}
+                className="mt-4 aspect-[4/3] w-full border border-border"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.address.full)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-block text-[11px] tracking-[0.22em] text-muted-foreground uppercase transition-colors hover:text-bronze"
+              >
+                Open in Google Maps
+              </a>
             </li>
           </ul>
         </Reveal>
