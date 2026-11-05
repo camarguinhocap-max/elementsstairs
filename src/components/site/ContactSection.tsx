@@ -2,7 +2,13 @@ import { useRef, useState, type FormEvent } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Upload, X } from "lucide-react";
 import { toast } from "sonner";
-import { business, contacts, facebookHandle, facebookUrl } from "@/lib/site-data";
+import {
+  business,
+  contacts,
+  facebookHandle,
+  facebookUrl,
+  serviceCitiesLabel,
+} from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import { Reveal } from "./Reveal";
 
@@ -58,9 +64,15 @@ async function uploadPhotosToCloudinary(files: File[]): Promise<string[]> {
 
 export function ContactSection({
   defaultProjectType,
+  serviceAreaFocus = false,
 }: {
   /** Preselect a project type — used on the /stairs landing page. */
   defaultProjectType?: string;
+  /**
+   * Lead with the cities served and de-emphasize the office address (no map) —
+   * used on the /contact page. Jobs happen at the customer's home.
+   */
+  serviceAreaFocus?: boolean;
 }) {
   const [files, setFiles] = useState<File[]>([]);
   const [submitting, setSubmitting] = useState(false);
@@ -113,6 +125,9 @@ export function ContactSection({
       <Reveal>
         <p className="eyebrow">Contact</p>
         <h2 className="display-sm mt-6 max-w-2xl">Let&rsquo;s Talk About Your Project.</h2>
+        {serviceAreaFocus && (
+          <p className="mt-6 font-serif text-2xl text-bronze">Serving {serviceCitiesLabel}</p>
+        )}
       </Reveal>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1.35fr_0.65fr] lg:gap-24">
@@ -284,25 +299,42 @@ export function ContactSection({
             </li>
             <li>
               <p className="eyebrow">Service Area</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {business.cities.join(", ")} and surrounding areas, FL.
-              </p>
+              {serviceAreaFocus ? (
+                <>
+                  <ul className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1 font-serif text-xl">
+                    {business.cities.map((city) => (
+                      <li key={city}>{city}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    and surrounding areas, FL.
+                  </p>
+                </>
+              ) : (
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {business.cities.join(", ")} and surrounding areas, FL.
+                </p>
+              )}
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{business.hours}</p>
             </li>
             <li>
               <p className="eyebrow">Office</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p
+                className={`mt-2 leading-relaxed text-muted-foreground ${serviceAreaFocus ? "text-xs" : "text-sm"}`}
+              >
                 {business.address.full}
               </p>
-              {/* Keyless Google Maps embed — no API key needed for a simple pin. */}
-              <iframe
-                title={`Map of ${business.name} office`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(business.address.full)}&output=embed`}
-                className="mt-4 aspect-[4/3] w-full border border-border"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
+              {!serviceAreaFocus && (
+                /* Keyless Google Maps embed — no API key needed for a simple pin. */
+                <iframe
+                  title={`Map of ${business.name} office`}
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(business.address.full)}&output=embed`}
+                  className="mt-4 aspect-[4/3] w-full border border-border"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              )}
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.address.full)}`}
                 target="_blank"

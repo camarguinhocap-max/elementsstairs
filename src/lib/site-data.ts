@@ -80,6 +80,9 @@ export const business = {
   email: "contact@ehrremodeling.com",
 };
 
+// "Ocala, Orlando, Gainesville & Tampa" — always derived from business.cities.
+export const serviceCitiesLabel = `${business.cities.slice(0, -1).join(", ")} & ${business.cities[business.cities.length - 1]}`;
+
 // Google Analytics 4 — property "Element Home Remodeling" (separate GA4 account,
 // same access model as Search Console: Camarguinho manages day-to-day, Leonardo has
 // Administrator access too).

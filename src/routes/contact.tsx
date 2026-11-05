@@ -74,7 +74,7 @@ function ContactPage() {
           intro="Tell us about your project and timeline — photos help us respond with a clearer estimate."
           image={images.cta}
         />
-        <ContactSection />
+        <ContactSection serviceAreaFocus />
       </main>
       <SiteFooter />
       <MobileContactBar />

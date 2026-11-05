@@ -11,7 +11,7 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Reveal } from "@/components/site/Reveal";
 import { FaqSection } from "@/components/site/FaqSection";
-import { business, images, stairsFaq } from "@/lib/site-data";
+import { business, images, serviceCitiesLabel, stairsFaq } from "@/lib/site-data";
 
 const title = `Oak Wood Staircase & Stair Remodeling | ${business.name}`;
 const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates, ${business.insurance}.`;
@@ -83,6 +83,7 @@ function StairsPage() {
         <PageHero
           eyebrow="Our Signature Service"
           title="Oak Wood Staircases, Built On Site."
+          tagline={`Stair remodeling in ${serviceCitiesLabel}`}
           intro="A new oak staircase is the single upgrade homeowners in Central Florida ask us for most. Free estimate, honest timeline, clean job site."
           image={images.intro}
         />

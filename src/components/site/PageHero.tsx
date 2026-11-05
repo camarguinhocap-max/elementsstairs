@@ -1,11 +1,14 @@
 export function PageHero({
   eyebrow,
   title,
+  tagline,
   intro,
   image,
 }: {
   eyebrow: string;
   title: string;
+  /** Optional line shown right below the title. */
+  tagline?: string;
   intro: string;
   image: string;
 }) {
@@ -22,6 +25,11 @@ export function PageHero({
       <div className="relative mx-auto max-w-[1600px] px-6 pt-44 pb-24 sm:px-10 sm:pt-56 sm:pb-32">
         <p className="eyebrow-light">{eyebrow}</p>
         <h1 className="display-sm mt-6 max-w-3xl text-ink-foreground">{title}</h1>
+        {tagline && (
+          <p className="mt-6 max-w-3xl font-serif text-xl text-ink-foreground sm:text-2xl">
+            {tagline}
+          </p>
+        )}
         <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-ink-muted">{intro}</p>
       </div>
     </section>
