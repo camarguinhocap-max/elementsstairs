@@ -75,7 +75,7 @@ export const business = {
       return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
     },
   },
-  cities: ["Miami-Dade", "Broward", "Palm Beach", "Orange"],
+  cities: ["Ocala", "Orlando", "Gainesville", "Tampa"],
   state: "FL",
   email: "contact@ehrremodeling.com",
 };
@@ -343,9 +343,9 @@ export const galleryItems = [
 
 export const stairsFaq = [
   {
-    question: "Do you build custom staircases serving Miami-Dade, Broward, Palm Beach & Orange counties?",
+    question: "Do you build custom staircases in Ocala, FL?",
     answer:
-      "Yes — Miami-Dade, Broward, Palm Beach and Orange are our core service areas. We build oak wood staircases, remodel existing stairs, and install glass, metal or cable railings for homeowners throughout South Florida.",
+      "Yes — Ocala is one of our core service areas, alongside Orlando, Gainesville and Tampa. We build oak wood staircases, remodel existing stairs, and install glass, metal or cable railings for homeowners throughout Central Florida.",
   },
   {
     question: "How long does a stair remodel usually take?",

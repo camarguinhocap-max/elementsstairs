@@ -82,10 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${business.name} — Stairs & Home Remodeling in South Florida` },
+      { title: `${business.name} — Stairs & Home Remodeling in Central Florida` },
       {
         name: "description",
-        content: `Oak wood staircases, stair remodeling, kitchen, bathroom and home remodeling for Miami-Dade, Broward, Palm Beach and Orange, FL. Free estimates, ${business.insurance}.`,
+        content: `Oak wood staircases, stair remodeling, kitchen, bathroom and home remodeling for Ocala, Orlando, Gainesville and Tampa, FL. Free estimates, ${business.insurance}.`,
       },
       { name: "author", content: business.name },
       { property: "og:site_name", content: business.name },
@@ -121,7 +121,7 @@ gtag('config', '${ga4MeasurementId}');`,
               "@id": `${business.siteUrl}/#business`,
               name: business.name,
               description:
-                "Oak wood staircases, stair remodeling, and general home remodeling (kitchens, bathrooms, carpentry, painting) for homeowners in South Florida.",
+                "Oak wood staircases, stair remodeling, and general home remodeling (kitchens, bathrooms, carpentry, painting) for homeowners in Central Florida.",
               url: business.siteUrl,
               telephone: contacts[0]!.tel,
               email: business.email,
