@@ -8,7 +8,7 @@ import { images } from "@/lib/site-data";
 
 const title = "Get a Free Estimate — Stairs & Home Remodeling | Element Home Remodeling";
 const description =
-  "Tell us about your stair or remodeling project and upload photos. Serving Ocala, Orlando, Gainesville and Tampa, FL.";
+  "Tell us about your stair or remodeling project and upload photos. Serving Ocala, Orlando and Gainesville, FL.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

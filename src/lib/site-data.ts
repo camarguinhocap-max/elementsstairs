@@ -75,12 +75,12 @@ export const business = {
       return `${this.street}, ${this.city}, ${this.state} ${this.zip}`;
     },
   },
-  cities: ["Ocala", "Orlando", "Gainesville", "Tampa"],
+  cities: ["Ocala", "Orlando", "Gainesville"],
   state: "FL",
   email: "contact@ehrremodeling.com",
 };
 
-// "Ocala, Orlando, Gainesville & Tampa" — always derived from business.cities.
+// "Ocala, Orlando & Gainesville" — always derived from business.cities.
 export const serviceCitiesLabel = `${business.cities.slice(0, -1).join(", ")} & ${business.cities[business.cities.length - 1]}`;
 
 // Google Analytics 4 — property "Element Home Remodeling" (separate GA4 account,
@@ -348,7 +348,7 @@ export const stairsFaq = [
   {
     question: "Do you build custom staircases in Ocala, FL?",
     answer:
-      "Yes — Ocala is one of our core service areas, alongside Orlando, Gainesville and Tampa. We build oak wood staircases, remodel existing stairs, and install glass, metal or cable railings for homeowners throughout Central Florida.",
+      "Yes — Ocala is one of our core service areas, alongside Orlando and Gainesville. We build oak wood staircases, remodel existing stairs, and install glass, metal or cable railings for homeowners throughout Central Florida.",
   },
   {
     question: "How long does a stair remodel usually take?",

@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: `${business.name} — Stairs & Home Remodeling in Central Florida` },
       {
         name: "description",
-        content: `Oak wood staircases, stair remodeling, kitchen, bathroom and home remodeling for Ocala, Orlando, Gainesville and Tampa, FL. Free estimates, ${business.insurance}.`,
+        content: `Oak wood staircases, stair remodeling, kitchen, bathroom and home remodeling for Ocala, Orlando and Gainesville, FL. Free estimates, ${business.insurance}.`,
       },
       { name: "author", content: business.name },
       { property: "og:site_name", content: business.name },
