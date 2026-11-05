@@ -13,7 +13,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { FaqSection } from "@/components/site/FaqSection";
 import { business, images, serviceCitiesLabel, stairsFaq } from "@/lib/site-data";
 
-const title = `Oak Wood Staircase & Stair Remodeling | ${business.name}`;
+const title = `Stair Remodeling in Central Florida | ${business.name}`;
 const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates, ${business.insurance}.`;
 
 export const Route = createFileRoute("/stairs")({
