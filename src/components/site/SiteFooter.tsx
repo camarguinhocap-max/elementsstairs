@@ -18,8 +18,7 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ink-muted">
-              Oak wood staircases and general home remodeling for {business.cities.join(", ")}, FL.{" "}
-              {business.insurance}.
+              Oak wood staircases and general home remodeling for {business.cities.join(", ")}, FL.
             </p>
             <p className="mt-4 text-sm text-ink-muted">{business.hours}</p>
             <p className="mt-4 text-sm text-ink-muted">{business.address.full}</p>

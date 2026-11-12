@@ -14,7 +14,7 @@ import { FaqSection } from "@/components/site/FaqSection";
 import { business, images, serviceCitiesLabel, stairsFaq } from "@/lib/site-data";
 
 const title = `Stair Remodeling in Central Florida | ${business.name}`;
-const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates, ${business.insurance}.`;
+const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates.`;
 
 export const Route = createFileRoute("/stairs")({
   head: () => ({
@@ -101,9 +101,7 @@ function StairsPage() {
                 trim.
               </p>
               <p>
-                We serve homeowners across {business.cities.join(", ")} and the surrounding areas.{" "}
-                We&rsquo;re {business.insurance} — ask us for proof of coverage with your free
-                estimate.
+                We serve homeowners across {business.cities.join(", ")} and the surrounding areas.
               </p>
             </div>
           </Reveal>

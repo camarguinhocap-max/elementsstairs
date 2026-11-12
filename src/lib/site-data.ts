@@ -48,7 +48,6 @@ export const business = {
   siteUrl: "https://ehrremodeling.com",
   flagshipService: "Oak Wood Staircase",
   hours: "Monday–Saturday, 8:00 AM – 5:00 PM",
-  insurance: "general liability insured",
   differentiators: [
     {
       title: "Organized Job Sites",
@@ -359,10 +358,6 @@ export const stairsFaq = [
     question: "What materials can I choose for my stair railing?",
     answer:
       "Solid oak, frameless glass, powder-coated black metal, or cable railing — we build around your home's existing layout and trim, so the staircase matches the rest of the house rather than looking bolted on.",
-  },
-  {
-    question: "Are you licensed and insured?",
-    answer: `Yes — we carry ${business.insurance}. Ask us for proof of coverage when you request your free estimate.`,
   },
   {
     question: "Can you remodel a staircase that currently has carpet?",
