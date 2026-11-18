@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BathroomRemodelingRouteImport } from './routes/bathroom-remodeling'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as KitchenRemodelingRouteImport } from './routes/kitchen-remodeling'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as ProjectsRouteImport } from './routes/projects'
@@ -31,9 +33,19 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BathroomRemodelingRoute = BathroomRemodelingRouteImport.update({
+  id: '/bathroom-remodeling',
+  path: '/bathroom-remodeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KitchenRemodelingRoute = KitchenRemodelingRouteImport.update({
+  id: '/kitchen-remodeling',
+  path: '/kitchen-remodeling',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -80,7 +92,9 @@ const ThankYouRoute = ThankYouRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/projects': typeof ProjectsRoute
@@ -93,7 +107,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/projects': typeof ProjectsRoute
@@ -107,7 +123,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
   '/projects': typeof ProjectsRoute
@@ -122,7 +140,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/bathroom-remodeling'
     | '/contact'
+    | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
     | '/projects'
@@ -135,7 +155,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/bathroom-remodeling'
     | '/contact'
+    | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
     | '/projects'
@@ -148,7 +170,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/bathroom-remodeling'
     | '/contact'
+    | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
     | '/projects'
@@ -162,7 +186,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BathroomRemodelingRoute: typeof BathroomRemodelingRoute
   ContactRoute: typeof ContactRoute
+  KitchenRemodelingRoute: typeof KitchenRemodelingRoute
   PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
   ProjectsRoute: typeof ProjectsRoute
@@ -189,11 +215,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bathroom-remodeling': {
+      id: '/bathroom-remodeling'
+      path: '/bathroom-remodeling'
+      fullPath: '/bathroom-remodeling'
+      preLoaderRoute: typeof BathroomRemodelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kitchen-remodeling': {
+      id: '/kitchen-remodeling'
+      path: '/kitchen-remodeling'
+      fullPath: '/kitchen-remodeling'
+      preLoaderRoute: typeof KitchenRemodelingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -258,7 +298,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BathroomRemodelingRoute: BathroomRemodelingRoute,
   ContactRoute: ContactRoute,
+  KitchenRemodelingRoute: KitchenRemodelingRoute,
   PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,
   ProjectsRoute: ProjectsRoute,
