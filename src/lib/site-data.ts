@@ -67,7 +67,7 @@ export const business = {
   // business is based, not a service area; the service cities below are a
   // separate list of where jobs actually happen, in Central Florida).
   address: {
-    street: "1214 SW First Way",
+    street: "1210 SW First Way",
     city: "Deerfield Beach",
     state: "FL",
     zip: "33441",
