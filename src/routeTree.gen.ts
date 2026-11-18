@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BathroomRemodelingRouteImport } from './routes/bathroom-remodeling'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CustomClosetsRouteImport } from './routes/custom-closets'
 import { Route as KitchenRemodelingRouteImport } from './routes/kitchen-remodeling'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProcessRouteImport } from './routes/process'
@@ -41,6 +42,11 @@ const BathroomRemodelingRoute = BathroomRemodelingRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomClosetsRoute = CustomClosetsRouteImport.update({
+  id: '/custom-closets',
+  path: '/custom-closets',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KitchenRemodelingRoute = KitchenRemodelingRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/custom-closets': typeof CustomClosetsRoute
   '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/custom-closets': typeof CustomClosetsRoute
   '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/bathroom-remodeling': typeof BathroomRemodelingRoute
   '/contact': typeof ContactRoute
+  '/custom-closets': typeof CustomClosetsRoute
   '/kitchen-remodeling': typeof KitchenRemodelingRoute
   '/privacy': typeof PrivacyRoute
   '/process': typeof ProcessRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bathroom-remodeling'
     | '/contact'
+    | '/custom-closets'
     | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
@@ -157,6 +167,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bathroom-remodeling'
     | '/contact'
+    | '/custom-closets'
     | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
@@ -172,6 +183,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/bathroom-remodeling'
     | '/contact'
+    | '/custom-closets'
     | '/kitchen-remodeling'
     | '/privacy'
     | '/process'
@@ -188,6 +200,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BathroomRemodelingRoute: typeof BathroomRemodelingRoute
   ContactRoute: typeof ContactRoute
+  CustomClosetsRoute: typeof CustomClosetsRoute
   KitchenRemodelingRoute: typeof KitchenRemodelingRoute
   PrivacyRoute: typeof PrivacyRoute
   ProcessRoute: typeof ProcessRoute
@@ -227,6 +240,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-closets': {
+      id: '/custom-closets'
+      path: '/custom-closets'
+      fullPath: '/custom-closets'
+      preLoaderRoute: typeof CustomClosetsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kitchen-remodeling': {
@@ -300,6 +320,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BathroomRemodelingRoute: BathroomRemodelingRoute,
   ContactRoute: ContactRoute,
+  CustomClosetsRoute: CustomClosetsRoute,
   KitchenRemodelingRoute: KitchenRemodelingRoute,
   PrivacyRoute: PrivacyRoute,
   ProcessRoute: ProcessRoute,

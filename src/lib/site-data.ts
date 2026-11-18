@@ -22,6 +22,7 @@ import servicePainting from "@/assets/service-painting.jpg";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
 import serviceHandrails from "@/assets/service-handrails.jpg";
 import serviceCarpentry from "@/assets/service-carpentry.jpg";
+import closet01 from "@/assets/gallery/closet-01.jpg";
 import logoFull from "@/assets/logo.png";
 import logoIcon from "@/assets/logo-icon.png";
 
@@ -195,6 +196,8 @@ export type Service = {
   image?: string;
   group: ServiceGroup;
   flagship?: boolean;
+  /** Dedicated landing page; the card links to it when set. */
+  to?: "/kitchen-remodeling" | "/bathroom-remodeling" | "/custom-closets";
 };
 
 export const services: Service[] = [
@@ -262,6 +265,23 @@ export const services: Service[] = [
     copy: "Interior painting and stain work, prepped and finished to a clean, lasting result.",
     image: servicePainting,
     group: "remodeling",
+  },
+];
+
+// The /services page list: adds landing-page links and Custom Closets. The Home
+// page and footer keep using `services` above.
+export const servicesWithPages: Service[] = [
+  ...services.map((s): Service => {
+    if (s.title === "Kitchen Remodeling") return { ...s, to: "/kitchen-remodeling" };
+    if (s.title === "Bathroom Remodeling") return { ...s, to: "/bathroom-remodeling" };
+    return s;
+  }),
+  {
+    title: "Custom Closets",
+    copy: "Custom closet built-ins — shelving, drawers and hanging space, designed around your home.",
+    image: closet01,
+    group: "remodeling",
+    to: "/custom-closets",
   },
 ];
 

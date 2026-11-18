@@ -5,13 +5,42 @@ import { MobileContactBar } from "@/components/site/MobileContactBar";
 import { PageHero } from "@/components/site/PageHero";
 import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
+import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { business, serviceCitiesLabel } from "@/lib/site-data";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
+import kitchen01 from "@/assets/gallery/kitchen-01.jpg";
+import kitchen02 from "@/assets/gallery/kitchen-02.jpg";
+import kitchen03 from "@/assets/gallery/kitchen-03.jpg";
+import kitchen04 from "@/assets/gallery/kitchen-04.jpg";
+import kitchen05 from "@/assets/gallery/kitchen-05.jpg";
 
 const title = `Kitchen Remodeling in Central Florida | ${business.name}`;
 const description = `Full and partial kitchen remodels for homeowners in ${business.cities.join(", ")}, FL. Free estimates.`;
 const pageUrl = `${business.siteUrl}/kitchen-remodeling`;
+
+const galleryImages = [
+  {
+    src: kitchen01,
+    alt: "White kitchen with marble-look backsplash and stainless range hood by Element Home Remodeling",
+  },
+  {
+    src: kitchen02,
+    alt: "White kitchen island with wood floors and built-in pantry shelving by Element Home Remodeling",
+  },
+  {
+    src: kitchen03,
+    alt: "Open kitchen with two islands, stone countertops and globe pendant lights by Element Home Remodeling",
+  },
+  {
+    src: kitchen04,
+    alt: "Wood-grain kitchen cabinetry with stone backsplash and under-cabinet lighting by Element Home Remodeling",
+  },
+  {
+    src: kitchen05,
+    alt: "Wood-grain cabinets with stone countertop and lit floating shelf by Element Home Remodeling",
+  },
+];
 
 export const Route = createFileRoute("/kitchen-remodeling")({
   head: () => ({
@@ -100,6 +129,8 @@ function KitchenRemodelingPage() {
         <div id="estimate">
           <ContactSection defaultProjectType="Kitchen Remodeling" />
         </div>
+
+        <PhotoGallery title="Recent Kitchen Projects" images={galleryImages} />
 
         <TrustSection />
       </main>

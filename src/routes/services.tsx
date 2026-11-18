@@ -7,7 +7,7 @@ import { ServicesSection } from "@/components/site/ServicesSection";
 import { MaterialDetails } from "@/components/site/MaterialDetails";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { FinalCta } from "@/components/site/FinalCta";
-import { projects, services } from "@/lib/site-data";
+import { projects, servicesWithPages } from "@/lib/site-data";
 
 const title = "Stairs, Railings & Home Remodeling Services | Element Home Remodeling";
 const description =
@@ -61,7 +61,7 @@ export const Route = createFileRoute("/services")({
             {
               "@type": "ItemList",
               name: "Stairs, railings and home remodeling services",
-              itemListElement: services.map((s, i) => ({
+              itemListElement: servicesWithPages.map((s, i) => ({
                 "@type": "ListItem",
                 position: i + 1,
                 item: {
@@ -93,7 +93,7 @@ function ServicesPage() {
           intro="Oak wood staircases and stair remodeling are our priority — plus kitchen, bathroom, carpentry and painting for the rest of the home."
           image={projects[0]!.image}
         />
-        <ServicesSection />
+        <ServicesSection items={servicesWithPages} />
         <MaterialDetails />
         <ProcessSection />
         <FinalCta />

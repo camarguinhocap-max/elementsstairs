@@ -5,13 +5,57 @@ import { MobileContactBar } from "@/components/site/MobileContactBar";
 import { PageHero } from "@/components/site/PageHero";
 import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
+import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { business, serviceCitiesLabel } from "@/lib/site-data";
 import serviceBathroom from "@/assets/service-bathroom.jpg";
+import bathroom01 from "@/assets/gallery/bathroom-01.jpg";
+import bathroom02 from "@/assets/gallery/bathroom-02.jpg";
+import bathroom03 from "@/assets/gallery/bathroom-03.jpg";
+import bathroom04 from "@/assets/gallery/bathroom-04.jpg";
+import bathroom05 from "@/assets/gallery/bathroom-05.jpg";
+import bathroom06 from "@/assets/gallery/bathroom-06.jpg";
+import bathroom07 from "@/assets/gallery/bathroom-07.jpg";
+import bathroom08 from "@/assets/gallery/bathroom-08.jpg";
 
 const title = `Bathroom Remodeling in Central Florida | ${business.name}`;
 const description = `Bathroom renovations from a full gut to a refresh of fixtures, tile and finishes for homeowners in ${business.cities.join(", ")}, FL. Free estimates.`;
 const pageUrl = `${business.siteUrl}/bathroom-remodeling`;
+
+const galleryImages = [
+  {
+    src: bathroom01,
+    alt: "Bathroom with double vanity, black countertops, backlit mirror and marble-look tile by Element Home Remodeling",
+  },
+  {
+    src: bathroom02,
+    alt: "Bathroom with agate-look wall tile, wood vanity and backlit mirror by Element Home Remodeling",
+  },
+  {
+    src: bathroom03,
+    alt: "Bathroom with white double vanity, gold hardware and mosaic accent wall by Element Home Remodeling",
+  },
+  {
+    src: bathroom04,
+    alt: "Walk-in shower with marble-look walls, glass enclosure and built-in bench by Element Home Remodeling",
+  },
+  {
+    src: bathroom05,
+    alt: "Glass walk-in shower with gradient mosaic tile wall by Element Home Remodeling",
+  },
+  {
+    src: bathroom06,
+    alt: "Arched shower with white stone tile, brass fixtures and glass door by Element Home Remodeling",
+  },
+  {
+    src: bathroom07,
+    alt: "Bathroom with gray tile glass shower, white vanity and wavy mirror by Element Home Remodeling",
+  },
+  {
+    src: bathroom08,
+    alt: "Freestanding tub in front of a black and gold mosaic accent wall by Element Home Remodeling",
+  },
+];
 
 export const Route = createFileRoute("/bathroom-remodeling")({
   head: () => ({
@@ -97,6 +141,8 @@ function BathroomRemodelingPage() {
         <div id="estimate">
           <ContactSection defaultProjectType="Bathroom Remodeling" />
         </div>
+
+        <PhotoGallery title="Recent Bathroom Projects" images={galleryImages} />
 
         <TrustSection />
       </main>

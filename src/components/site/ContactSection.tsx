@@ -21,6 +21,7 @@ const projectTypes = [
   "Bathroom Remodeling",
   "Carpentry",
   "Interior Painting",
+  "Custom Closets",
   "Other",
 ];
 

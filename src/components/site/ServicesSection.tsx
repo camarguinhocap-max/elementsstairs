@@ -1,10 +1,11 @@
+import { Link } from "@tanstack/react-router";
 import { Hammer } from "lucide-react";
 import { services, type Service } from "@/lib/site-data";
 import { Reveal } from "./Reveal";
 
 function ServiceCard({ s, delay }: { s: Service; delay: number }) {
-  return (
-    <Reveal delay={delay} as="article" className="group">
+  const content = (
+    <>
       <div className="relative overflow-hidden">
         {s.image ? (
           <img
@@ -27,13 +28,25 @@ function ServiceCard({ s, delay }: { s: Service; delay: number }) {
       </div>
       <h3 className="mt-7 font-serif text-2xl">{s.title}</h3>
       <p className="mt-3 max-w-sm text-sm leading-[1.9] text-muted-foreground">{s.copy}</p>
+    </>
+  );
+
+  return (
+    <Reveal delay={delay} as="article" className="group">
+      {s.to ? (
+        <Link to={s.to} className="block">
+          {content}
+        </Link>
+      ) : (
+        content
+      )}
     </Reveal>
   );
 }
 
-export function ServicesSection() {
-  const stairs = services.filter((s) => s.group === "stairs");
-  const remodeling = services.filter((s) => s.group === "remodeling");
+export function ServicesSection({ items = services }: { items?: Service[] } = {}) {
+  const stairs = items.filter((s) => s.group === "stairs");
+  const remodeling = items.filter((s) => s.group === "remodeling");
 
   return (
     <section id="services" className="bg-card py-24 sm:py-32">
