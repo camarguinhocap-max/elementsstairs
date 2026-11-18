@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import closet01 from "@/assets/gallery/closet-01.jpg";
 import closet02 from "@/assets/gallery/closet-02.jpg";
 
@@ -37,7 +38,7 @@ export const Route = createFileRoute("/custom-closets")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: pageUrl },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [{ rel: "canonical", href: pageUrl }, heroPreloadLink(heroImages.closet)],
     scripts: [
       {
         type: "application/ld+json",
@@ -82,7 +83,7 @@ function CustomClosetsPage() {
           title="Custom Closets, Built to Fit."
           tagline={`Custom closets in ${serviceCitiesLabel}`}
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
-          image={closet01}
+          image={heroImages.closet}
           showCtas
         />
 

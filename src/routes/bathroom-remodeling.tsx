@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import serviceBathroom from "@/assets/service-bathroom.jpg";
 import bathroom01 from "@/assets/gallery/bathroom-01.jpg";
 import bathroom02 from "@/assets/gallery/bathroom-02.jpg";
@@ -68,7 +69,7 @@ export const Route = createFileRoute("/bathroom-remodeling")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: pageUrl },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [{ rel: "canonical", href: pageUrl }, heroPreloadLink(heroImages.bathroom)],
     scripts: [
       {
         type: "application/ld+json",
@@ -113,7 +114,7 @@ function BathroomRemodelingPage() {
           title="Bathroom Remodeling, Done Right."
           tagline={`Bathroom remodeling in ${serviceCitiesLabel}`}
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
-          image={serviceBathroom}
+          image={heroImages.bathroom}
           showCtas
         />
 

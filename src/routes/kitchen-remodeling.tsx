@@ -8,6 +8,7 @@ import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
 import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
 import kitchen01 from "@/assets/gallery/kitchen-01.jpg";
 import kitchen02 from "@/assets/gallery/kitchen-02.jpg";
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/kitchen-remodeling")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: pageUrl },
     ],
-    links: [{ rel: "canonical", href: pageUrl }],
+    links: [{ rel: "canonical", href: pageUrl }, heroPreloadLink(heroImages.kitchen)],
     scripts: [
       {
         type: "application/ld+json",
@@ -98,7 +99,7 @@ function KitchenRemodelingPage() {
           title="Kitchen Remodeling, Done Right."
           tagline={`Kitchen remodeling in ${serviceCitiesLabel}`}
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
-          image={serviceKitchen}
+          image={heroImages.kitchen}
           showCtas
         />
 

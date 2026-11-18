@@ -1,5 +1,8 @@
 import { contacts } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
+import { heroImageSizes, type HeroImage } from "@/lib/hero-images";
+
+const heroImageClass = "absolute inset-0 h-full w-full object-cover opacity-55";
 
 export function PageHero({
   eyebrow,
@@ -14,19 +17,37 @@ export function PageHero({
   /** Optional line shown right below the title. */
   tagline?: string;
   intro: string;
-  image: string;
+  /** A plain URL, or a responsive image from hero-images.ts (preload it in the route head). */
+  image: string | HeroImage;
   /** Show the estimate and call buttons. The page must have an element with id="estimate". */
   showCtas?: boolean;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-ink">
-      <img
-        src={image}
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-cover opacity-55"
-      />
+      {typeof image === "string" ? (
+        <img
+          src={image}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          className={heroImageClass}
+        />
+      ) : (
+        <picture>
+          <source type="image/webp" srcSet={image.webpSrcSet} sizes={heroImageSizes} />
+          <img
+            src={image.src}
+            srcSet={image.jpgSrcSet}
+            sizes={heroImageSizes}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className={heroImageClass}
+          />
+        </picture>
+      )}
       <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/55 to-ink/85" />
       <div className="relative mx-auto max-w-[1600px] px-6 pt-44 pb-24 sm:px-10 sm:pt-56 sm:pb-32">
         <p className="eyebrow-light">{eyebrow}</p>

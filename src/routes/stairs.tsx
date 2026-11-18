@@ -10,7 +10,8 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Reveal } from "@/components/site/Reveal";
 import { FaqSection } from "@/components/site/FaqSection";
-import { business, images, serviceCitiesLabel, stairsFaq } from "@/lib/site-data";
+import { business, serviceCitiesLabel, stairsFaq } from "@/lib/site-data";
+import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 
 const title = `Stair Remodeling in Central Florida | ${business.name}`;
 const description = `Custom oak wood staircases, stair remodeling, and metal or glass railings for homeowners in ${business.cities.join(", ")}, FL. Free estimates.`;
@@ -26,7 +27,10 @@ export const Route = createFileRoute("/stairs")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: `${business.siteUrl}/stairs` },
     ],
-    links: [{ rel: "canonical", href: `${business.siteUrl}/stairs` }],
+    links: [
+      { rel: "canonical", href: `${business.siteUrl}/stairs` },
+      heroPreloadLink(heroImages.stairs),
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -84,7 +88,7 @@ function StairsPage() {
           title="Oak Wood Staircases, Built On Site."
           tagline={`Stair remodeling in ${serviceCitiesLabel}`}
           intro="A new oak staircase is the single upgrade homeowners in Central Florida ask us for most. Free estimate, honest timeline, clean job site."
-          image={images.intro}
+          image={heroImages.stairs}
           showCtas
         />
 
