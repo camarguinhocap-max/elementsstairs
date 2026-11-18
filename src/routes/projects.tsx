@@ -8,6 +8,7 @@ import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { GallerySection } from "@/components/site/GallerySection";
 import { FacebookSection } from "@/components/site/FacebookSection";
 import { FinalCta } from "@/components/site/FinalCta";
+import { MoreWorkSection } from "@/components/site/MoreWorkSection";
 import { projects } from "@/lib/site-data";
 
 const title = "Staircase Projects & Portfolio | Element Home Remodeling";
@@ -97,6 +98,7 @@ function ProjectsPage() {
         <GallerySection />
         <FacebookSection />
         <FinalCta />
+        <MoreWorkSection />
       </main>
       <SiteFooter />
       <MobileContactBar />

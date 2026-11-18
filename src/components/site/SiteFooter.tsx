@@ -47,6 +47,18 @@ export function SiteFooter() {
           <div>
             <p className="eyebrow-light">Services</p>
             <ul className="mt-6 space-y-3 text-sm text-ink-muted">
+              {[
+                ["Stairs", "/stairs"],
+                ["Kitchen Remodeling", "/kitchen-remodeling"],
+                ["Bathroom Remodeling", "/bathroom-remodeling"],
+                ["Custom Closets", "/custom-closets"],
+              ].map(([label, to]) => (
+                <li key={to}>
+                  <Link to={to!} className="transition-colors hover:text-bronze">
+                    {label}
+                  </Link>
+                </li>
+              ))}
               {services
                 .filter((s) => s.flagship || s.group === "stairs")
                 .slice(0, 5)

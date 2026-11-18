@@ -14,6 +14,7 @@ import { GallerySection } from "@/components/site/GallerySection";
 import { FacebookSection } from "@/components/site/FacebookSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { ContactSection } from "@/components/site/ContactSection";
+import { servicesWithPages } from "@/lib/site-data";
 
 const title = "Oak Wood Staircases & Home Remodeling in Central Florida | Element Home Remodeling";
 const description =
@@ -44,7 +45,7 @@ function Index() {
         <Intro />
         <FeaturedProjects />
         <BeforeAfter />
-        <ServicesSection />
+        <ServicesSection items={servicesWithPages} />
         <MaterialDetails />
         <ProcessSection />
         <TrustSection />

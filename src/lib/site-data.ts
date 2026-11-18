@@ -268,8 +268,8 @@ export const services: Service[] = [
   },
 ];
 
-// The /services page list: adds landing-page links and Custom Closets. The Home
-// page and footer keep using `services` above.
+// The service cards on Home and /services: adds landing-page links and Custom
+// Closets. The footer keeps using `services` above.
 export const servicesWithPages: Service[] = [
   ...services.map((s): Service => {
     if (s.title === "Kitchen Remodeling") return { ...s, to: "/kitchen-remodeling" };
