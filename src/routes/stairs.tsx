@@ -6,7 +6,6 @@ import { PageHero } from "@/components/site/PageHero";
 import { FeaturedProjects } from "@/components/site/FeaturedProjects";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { MaterialDetails } from "@/components/site/MaterialDetails";
-import { Testimonials } from "@/components/site/Testimonials";
 import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { Reveal } from "@/components/site/Reveal";
@@ -115,7 +114,6 @@ function StairsPage() {
         <FeaturedProjects />
         <BeforeAfter />
         <MaterialDetails />
-        <Testimonials />
         <TrustSection />
         <FaqSection items={stairsFaq} title="Stair Remodeling — Frequently Asked Questions" />
       </main>

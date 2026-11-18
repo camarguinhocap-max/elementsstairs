@@ -15,7 +15,6 @@ export function TrustSection({ copy }: { copy?: string } = {}) {
             {copy ?? (
               <>
                 Free estimates, real before/after photos of every project, and organized job sites with clear timelines.
-                timeline and scope before we start.
               </>
             )}
           </p>

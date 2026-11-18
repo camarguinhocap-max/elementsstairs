@@ -10,7 +10,6 @@ import { ServicesSection } from "@/components/site/ServicesSection";
 import { MaterialDetails } from "@/components/site/MaterialDetails";
 import { ProcessSection } from "@/components/site/ProcessSection";
 import { TrustSection } from "@/components/site/TrustSection";
-import { Testimonials } from "@/components/site/Testimonials";
 import { GallerySection } from "@/components/site/GallerySection";
 import { FacebookSection } from "@/components/site/FacebookSection";
 import { FinalCta } from "@/components/site/FinalCta";
@@ -49,7 +48,6 @@ function Index() {
         <MaterialDetails />
         <ProcessSection />
         <TrustSection />
-        <Testimonials />
         <GallerySection />
         <FacebookSection />
         <FinalCta />
