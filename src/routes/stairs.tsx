@@ -86,6 +86,7 @@ function StairsPage() {
           tagline={`Stair remodeling in ${serviceCitiesLabel}`}
           intro="A new oak staircase is the single upgrade homeowners in Central Florida ask us for most. Free estimate, honest timeline, clean job site."
           image={images.intro}
+          showCtas
         />
 
         <section className="mx-auto max-w-[1600px] px-6 py-20 sm:px-10 sm:py-28">
@@ -107,13 +108,16 @@ function StairsPage() {
           </Reveal>
         </section>
 
+        <div id="estimate">
+          <ContactSection defaultProjectType="Oak Wood Staircase" />
+        </div>
+
         <FeaturedProjects />
         <BeforeAfter />
         <MaterialDetails />
         <Testimonials />
         <TrustSection />
         <FaqSection items={stairsFaq} title="Stair Remodeling — Frequently Asked Questions" />
-        <ContactSection defaultProjectType="Oak Wood Staircase" />
       </main>
       <SiteFooter />
       <MobileContactBar />

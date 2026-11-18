@@ -1,9 +1,13 @@
+import { contacts } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
+
 export function PageHero({
   eyebrow,
   title,
   tagline,
   intro,
   image,
+  showCtas = false,
 }: {
   eyebrow: string;
   title: string;
@@ -11,6 +15,8 @@ export function PageHero({
   tagline?: string;
   intro: string;
   image: string;
+  /** Show the estimate and call buttons. The page must have an element with id="estimate". */
+  showCtas?: boolean;
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-ink">
@@ -31,6 +37,24 @@ export function PageHero({
           </p>
         )}
         <p className="mt-8 max-w-xl text-[15px] leading-relaxed text-ink-muted">{intro}</p>
+        {showCtas && (
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#estimate"
+              onClick={() => trackEvent("estimate_click")}
+              className="btn-base btn-solid"
+            >
+              Get a Free Estimate
+            </a>
+            <a
+              href={`tel:${contacts[0]!.tel}`}
+              onClick={() => trackEvent("phone_click")}
+              className="btn-base btn-outline-light"
+            >
+              Call {contacts[0]!.phone}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
