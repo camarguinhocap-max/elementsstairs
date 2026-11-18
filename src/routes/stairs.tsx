@@ -85,8 +85,8 @@ function StairsPage() {
       <main>
         <PageHero
           eyebrow="Our Signature Service"
-          title="Oak Wood Staircases, Built On Site."
-          tagline={`Stair remodeling in ${serviceCitiesLabel}`}
+          title="Oak Wood Staircases in Central Florida"
+          tagline={`Built On Site. Stair remodeling in ${serviceCitiesLabel}`}
           intro="A new oak staircase is the single upgrade homeowners in Central Florida ask us for most. Free estimate, honest timeline, clean job site."
           image={heroImages.stairs}
           showCtas

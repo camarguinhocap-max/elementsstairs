@@ -66,8 +66,11 @@ export function Hero() {
         <h1 className="display mt-6 max-w-4xl text-ink-foreground">
           Oak Wood Staircases
           <br />
-          &amp; Home Remodeling, Done Right.
+          &amp; Home Remodeling in Central Florida
         </h1>
+        <p className="mt-6 max-w-3xl font-serif text-xl text-ink-foreground sm:text-2xl">
+          Done Right.
+        </p>
         <p className="mt-8 max-w-xl text-base leading-relaxed text-ink-muted">
           From custom oak staircases to kitchens, bathrooms and full home remodeling — organized job
           sites and quality materials. Free, no-pressure estimates.
