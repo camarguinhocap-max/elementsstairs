@@ -7,7 +7,10 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
-import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { ServiceDetails } from "@/components/site/ServiceDetails";
+import { FaqSection } from "@/components/site/FaqSection";
+import { business } from "@/lib/site-data";
+import { faqPageSchema, kitchenContent } from "@/lib/service-page-content";
 import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import serviceKitchen from "@/assets/service-kitchen.jpg";
 import kitchen01 from "@/assets/gallery/kitchen-01.jpg";
@@ -81,6 +84,7 @@ export const Route = createFileRoute("/kitchen-remodeling")({
                 { "@type": "ListItem", position: 2, name: "Kitchen Remodeling", item: pageUrl },
               ],
             },
+            faqPageSchema(kitchenContent.faq),
           ],
         }),
       },
@@ -96,8 +100,8 @@ function KitchenRemodelingPage() {
       <main>
         <PageHero
           eyebrow="Kitchen Remodeling"
-          title="Kitchen Remodeling, Done Right."
-          tagline={`Kitchen remodeling in ${serviceCitiesLabel}`}
+          title="Kitchen Remodeling in Central Florida"
+          tagline="Kitchen Remodeling, Done Right."
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
           image={heroImages.kitchen}
           showCtas
@@ -133,7 +137,11 @@ function KitchenRemodelingPage() {
 
         <PhotoGallery title="Recent Kitchen Projects" images={galleryImages} />
 
+        <ServiceDetails content={kitchenContent} currentPage="/kitchen-remodeling" />
+
         <TrustSection />
+
+        <FaqSection items={kitchenContent.faq} title={kitchenContent.faqTitle} />
       </main>
       <SiteFooter />
       <MobileContactBar />

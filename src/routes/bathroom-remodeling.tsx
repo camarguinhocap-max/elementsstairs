@@ -7,7 +7,10 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
-import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { ServiceDetails } from "@/components/site/ServiceDetails";
+import { FaqSection } from "@/components/site/FaqSection";
+import { business } from "@/lib/site-data";
+import { bathroomContent, faqPageSchema } from "@/lib/service-page-content";
 import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import serviceBathroom from "@/assets/service-bathroom.jpg";
 import bathroom01 from "@/assets/gallery/bathroom-01.jpg";
@@ -96,6 +99,7 @@ export const Route = createFileRoute("/bathroom-remodeling")({
                 { "@type": "ListItem", position: 2, name: "Bathroom Remodeling", item: pageUrl },
               ],
             },
+            faqPageSchema(bathroomContent.faq),
           ],
         }),
       },
@@ -111,8 +115,8 @@ function BathroomRemodelingPage() {
       <main>
         <PageHero
           eyebrow="Bathroom Remodeling"
-          title="Bathroom Remodeling, Done Right."
-          tagline={`Bathroom remodeling in ${serviceCitiesLabel}`}
+          title="Bathroom Remodeling in Central Florida"
+          tagline="Bathroom Remodeling, Done Right."
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
           image={heroImages.bathroom}
           showCtas
@@ -145,7 +149,11 @@ function BathroomRemodelingPage() {
 
         <PhotoGallery title="Recent Bathroom Projects" images={galleryImages} />
 
+        <ServiceDetails content={bathroomContent} currentPage="/bathroom-remodeling" />
+
         <TrustSection />
+
+        <FaqSection items={bathroomContent.faq} title={bathroomContent.faqTitle} />
       </main>
       <SiteFooter />
       <MobileContactBar />

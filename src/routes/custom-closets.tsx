@@ -7,7 +7,10 @@ import { TrustSection } from "@/components/site/TrustSection";
 import { ContactSection } from "@/components/site/ContactSection";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { Reveal } from "@/components/site/Reveal";
-import { business, serviceCitiesLabel } from "@/lib/site-data";
+import { ServiceDetails } from "@/components/site/ServiceDetails";
+import { FaqSection } from "@/components/site/FaqSection";
+import { business } from "@/lib/site-data";
+import { closetContent, faqPageSchema } from "@/lib/service-page-content";
 import { heroImages, heroPreloadLink } from "@/lib/hero-images";
 import closet01 from "@/assets/gallery/closet-01.jpg";
 import closet02 from "@/assets/gallery/closet-02.jpg";
@@ -65,6 +68,7 @@ export const Route = createFileRoute("/custom-closets")({
                 { "@type": "ListItem", position: 2, name: "Custom Closets", item: pageUrl },
               ],
             },
+            faqPageSchema(closetContent.faq),
           ],
         }),
       },
@@ -80,8 +84,8 @@ function CustomClosetsPage() {
       <main>
         <PageHero
           eyebrow="Custom Closets"
-          title="Custom Closets, Built to Fit."
-          tagline={`Custom closets in ${serviceCitiesLabel}`}
+          title="Custom Closets in Central Florida"
+          tagline="Custom Closets, Built to Fit."
           intro="Organized job sites and quality materials. Free, no-pressure estimates."
           image={heroImages.closet}
           showCtas
@@ -117,7 +121,11 @@ function CustomClosetsPage() {
 
         <PhotoGallery title="Recent Closet Projects" images={galleryImages} />
 
+        <ServiceDetails content={closetContent} currentPage="/custom-closets" />
+
         <TrustSection />
+
+        <FaqSection items={closetContent.faq} title={closetContent.faqTitle} />
       </main>
       <SiteFooter />
       <MobileContactBar />
